@@ -1,0 +1,298 @@
+/* Global Variables */
+
+:root {
+    --main-color: #1D6282;
+    --primary-color: #F0F0F0;
+    --secondary-color: #A2A3CB;
+    --accent-color: #C1CAD6;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+}
+
+.dashboard {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.welcome-message {
+    font-size: 1.8rem;
+    text-align: center;
+    flex-grow: 1;
+}
+
+.notification-icon {
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.profile-icon {
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: color 0.3s;
+    color: var(--main-color);
+}
+
+.profile {
+    display: none;/*intially hidden*/
+    align-items: center;
+    gap: 10px;
+}
+
+.profile :hover {
+    display: block;
+}
+/***********  all notifiocation typ shit   *********************/
+
+.notification-content {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.icon-style_header a {
+    text-decoration: none;
+}
+
+/* Notification Dropdown */
+.notification-dropdown {
+    display: none; /* Initially hidden */
+    position: absolute; /* Absolute position */
+    right: 10px;
+    top: 50px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    width: 250px;
+    z-index: 1000;
+    margin-top: 10px; /* Add margin to separate from the icon */
+}
+
+.notification-dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.notification-dropdown ul li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.notification-dropdown ul li:last-child {
+    border-bottom: none;
+}
+
+/* Remove hover effect */
+
+
+/* Balance Widget */
+.balance-widget {
+    background: var(--accent-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+.balance-widget h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
+.balance-widget p {
+    font-size: 2.5rem;
+    margin: 10px 0;
+}
+
+.balance-actions button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background: var(--main-color);
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.balance-actions button:hover {
+    background: var(--secondary-color);
+}
+
+/* Quick Access Tiles */
+.quick-access {
+    display: grid;
+    grid-template-columns: repeat(3
+    , minmax(150px, 1fr));
+    gap: 15px;
+}
+
+.tile {
+    background: var(--accent-color);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.tile:hover {
+    background: var(--secondary-color);
+}
+
+/* Transactions Overview */
+.transactions-overview {
+    background: var(--accent-color);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.transactions-overview h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.transactions-overview ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.transactions-overview ul li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.transactions-overview .view-all {
+    margin-top: 15px;
+    width: 100%;
+    padding: 10px;
+    background: var(--main-color);
+    color: var(--accent-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.transactions-overview .view-all:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    .dashboard {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .notification-content {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .balance-widget {
+        flex: 1 1 40%;
+    }
+
+    .quick-access {
+        flex: 1 1 55%;
+    }
+
+    .transactions-overview {
+        flex: 1 1 100%;
+    }
+}
+
+/* Select Payment Method Page */
+.select-payment-method-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.select-payment-method-container h1 {
+    color: var(--main-color);
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.payment-option {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.payment-option:hover {
+    background-color: var(--secondary-color);
+}
+
+/*footer*/ 
+.footer {
+    background: var(--main-color);
+    color: var(--accent-color);
+    text-align: center;
+    padding: 15px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    box-shadow: var(--box-shadow);
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: var(--accent-color);
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+    color: var(--secondary-color);
+}
+

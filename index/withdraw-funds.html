@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw Funds</title>
+    <link rel="stylesheet" href="/css/withdraw-funds.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <div class="withdraw-page">
+        <header class="header">
+            <h1 class="title">Withdraw Funds</h1>
+        </header>
+        <section class="withdraw-form">
+            <div class="balance-info">
+                <h2>Available Balance</h2>
+                <p>$5,678.90</p>
+            </div>
+            <form>
+                <label for="withdraw-amount">Enter Amount</label>
+                <input type="text" id="withdraw-amount" placeholder="Enter amount to withdraw">
+                
+                <label for="withdraw-method">Select Withdrawal Method</label>
+                <div class="withdraw-methods">
+                    <button type="button" class="method">
+                        <i class="fa-solid fa-credit-card"></i>
+                        Credit Card
+                    </button>
+                    <button type="button" class="method">
+                        <i class="fa-brands fa-paypal"></i>
+                        PayPal
+                    </button>
+                    <button type="button" class="method">
+                        <i class="fa-solid fa-university"></i>
+                        Bank Transfer
+                    </button>
+                    <button type="button" class="method">
+                        <i class="fa-solid fa-wallet"></i>
+                        Mobile Wallet
+                    </button>
+                </div>
+                <button type="submit" class="submit-button">Withdraw</button>
+            </form>
+        </section>
+    </div>
+</body>
+</html>

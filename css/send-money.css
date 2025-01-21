@@ -1,0 +1,125 @@
+/* Global Variables */
+
+:root {
+    --main-color: #1D6282;
+    --primary-color: #F0F0F0;
+    --secondary-color: #A2A3CB;
+    --accent-color: #C1CAD6;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+/* Send Money Page */
+.send-money-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: var(--box-shadow);
+    border-radius: 8px;
+}
+
+.send-money-container h1 {
+    color: var(--main-color);
+    text-align: center;
+}
+
+.send-money-container p {
+    text-align: center;
+}
+
+.payment-methods {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.payment-option.selected {
+    background-color: var(--secondary-color);
+}
+
+.mobile-wallet-options {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.wallet-option {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+.wallet-option.selected {
+    background-color: var(--secondary-color);
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-container label {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.input-container input[type="text"],
+.input-container input[type="number"],
+.input-container textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.send-money-button,
+.cancel-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.send-money-button {
+    background-color: var(--main-color);
+    color: #fff;
+}
+
+.send-money-button:hover {
+    background-color: var(--secondary-color);
+}
+
+.cancel-button {
+    background-color: #ccc;
+    color: #333;
+}
+
+.cancel-button:hover {
+    background-color: #999;
+}

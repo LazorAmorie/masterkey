@@ -1,0 +1,130 @@
+:root {
+    --main-color: #1D6282;
+    --accent-color: #F0F0F0;
+    --secondary-color: #A2A3CB;
+    --text-color: #333;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.add-funds-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    width: 100%;
+}
+
+.card h1 {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-option {
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    color: var(--text-color);
+    background: var(--accent-color);
+}
+
+.payment-option:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.payment-option.selected {
+    border: 2px solid var(--main-color);
+    background: var(--main-color);
+    color: white;
+}
+
+.input-container {
+    margin-bottom: 20px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+.input-container input:focus {
+    border-color: var(--main-color);
+    outline: none;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.add-funds-button {
+    background: var(--main-color);
+    color: white;
+    flex: 1;
+}
+
+.add-funds-button:hover {
+    background: var(--secondary-color);
+}
+
+.cancel-button {
+    background: #ccc;
+    color: white;
+    flex: 1;
+}
+
+.cancel-button:hover {
+    background: #aaa;
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="manifest" href="/index/manifest.json">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="icon-style_header profile-icon"><a href="settings.html"><i class="fa-solid fa-user"></i></a>
+                <div class="profile">
+                <a id="profile">Profile</a>
+                    <ul>
+                        <li><a href="profile.html">Profile</a></li>
+                        <li><a href="settings.html">Settings</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>            
+            </div>
+            <h1 class="welcome-message">Hello, GEORGE HUSSEIN!</h1>
+            <div class="icon-style_header notification-icon">
+                <a href="#"><i class="fa-solid fa-bell"></i></a> <!-- Link to notification page -->
+                <div class="notification-dropdown">
+                    <ul>
+                        <li><a href="notification.html">Notification 1</a></li>
+                        <li><a href="notification.html">Notification 2</a></li>
+                        <li><a href="notification.html">Notification 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <!-- Account Balance Widget -->
+        <section class="balance-widget">
+            <h2>Total Balance</h2>
+            <p>$5,678.90</p>
+            <div class="balance-actions">
+                <button onclick="window.location.href='add-funds.html'">Add Funds</button>
+                <button onclick="window.location.href='withdraw-funds.html'">Withdraw</button>
+            </div>
+            
+        </section>
+
+        <!-- Quick Access Tiles -->
+        <section class="quick-access">
+            <div class="tile" onclick="window.location.href='send-money.html'">
+                <i class="fa-solid fa-exchange-alt"></i> <!-- Money transfer icon -->
+                Send Money
+            </div> <!-- Link to send money page -->
+            <div class="tile">Pay Bills</div>
+            <div class="tile">Scan QR Code</div>
+            <div class="tile">Transaction History</div>
+        </section>
+
+        <!-- Transactions Overview -->
+        <section class="transactions-overview">
+            <h2>Recent Transactions</h2>
+            <ul>
+                <li><span>🛒 Payment</span>     <span>$45.00</span> <span>12/07/2024</span></li>
+                <li><span>📥 Received</span>    <span>$120.00</span> <span>12/06/2024</span></li>
+                <li><span>🏠 Rent</span>        <span>$1,000.00</span> <span>12/05/2024</span></li>
+            </ul>
+            <button class="view-all">View All Transactions</button>
+        </section>
+    </div>
+
+        <!-- Footer Section -->
+        <footer class="footer">
+            <p>&copy; 2024 FinTech App. All rights reserved.</p>
+            <nav class="footer-nav">
+                <a href="#privacy-policy">Privacy Policy</a> | 
+                <a href="#terms-of-service">Terms of Service</a> | 
+                <a href="#contact-us">Contact Us</a>
+            </nav>
+        </footer>
+</body>
+<script src="../scripts/js.js"></script>
+</html>
+<script>
+        window.addEventListener('load', function() {
+
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+                console.log('ServiceWorker registration successful with scope: ', registration.scope);
+            }, function(err) {
+                console.log('ServiceWorker registration failed: ', err);
+            });
+        });
+    
+</script>
+</html>

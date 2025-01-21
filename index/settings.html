@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="/css/settings.css"> <!-- Link to settings.css -->
+</head>
+<body>
+    <div class="settings-container">
+        <h1>Settings</h1>
+        
+        <!-- User's Info Section -->
+        <section id="user-info">
+            <h2>User's Info</h2>
+            <!-- ...existing code... -->
+            <form>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" class="input-field" placeholder="Enter your username">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" class="input-field" placeholder="Enter your email">
+                <!-- ...existing code... -->
+            </form>
+        </section>
+        
+        <!-- Account Privacy Section -->
+        <section id="account-privacy">
+            <h2>Account Privacy</h2>
+            <!-- ...existing code... -->
+            <form>
+                <label for="profile-visibility">Profile Visibility:</label>
+                <select id="profile-visibility" name="profile-visibility" class="input-field">
+                    <option value="public">Public</option>
+                    <option value="private">Private</option>
+                </select>
+                <!-- ...existing code... -->
+            </form>
+        </section>
+        
+        <!-- Security Info Section -->
+        <section id="security-info">
+            <h2>Security Info</h2>
+            <!-- ...existing code... -->
+            <form>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" class="input-field" placeholder="Enter your password">
+                <!-- ...existing code... -->
+            </form>
+        </section>
+        
+        <!-- Profile Editing Section -->
+        <section id="profile-editing">
+            <h2>Profile Editing</h2>
+            <!-- ...existing code... -->
+            <form>
+                <label for="profile-picture">Profile Picture:</label>
+                <input type="file" id="profile-picture" name="profile-picture" class="input-field">
+                <label for="bio">Bio:</label>
+                <textarea id="bio" name="bio" class="input-field" placeholder="Tell us about yourself"></textarea>
+                <!-- ...existing code... -->
+            </form>
+        </section>
+    </div>
+</body>
+</html>

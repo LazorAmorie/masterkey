@@ -1,0 +1,129 @@
+:root {
+    --main-color: #1D6282;
+    --accent-color: #F0F0F0;
+    --secondary-color: #A2A3CB;
+    --text-color: #333;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: var(--accent-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.withdraw-page {
+    width: 90%;
+    max-width: 400px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--box-shadow);
+    padding: 30px 20px;
+    text-align: center;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.title {
+    color: var(--main-color);
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.balance-info {
+    text-align: center;
+    background: #EAF6EA;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.balance-info h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--main-color);
+}
+
+.balance-info p {
+    margin: 5px 0 0;
+    font-size: 1.8rem;
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    font-size: 1rem;
+    color: var(--main-color);
+}
+
+input {
+    padding: 10px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: var(--main-color);
+    box-shadow: 0 0 4px rgba(29, 98, 130, 0.5);
+}
+
+.withdraw-methods {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.method {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.method i {
+    font-size: 1.5rem;
+}
+
+.method:hover {
+    background: var(--secondary-color);
+}
+
+.submit-button {
+    background: var(--main-color);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+    background: var(--secondary-color);
+}
