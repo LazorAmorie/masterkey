@@ -84,7 +84,7 @@ body {
 }
 
 .input-container input[type="text"],
-.input-container input[type="number"],
+.input-container input[type="text"],
 .input-container textarea {
     margin-top: 5px;
     padding: 10px;
