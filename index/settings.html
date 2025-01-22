@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Settings</title>
-    <link rel="stylesheet" href="/css/settings.css"> <!-- Link to settings.css -->
+    <link rel="stylesheet" href="../css/settings.css"> <!-- Link to settings.css -->
 </head>
 <body>
     <div class="settings-container">
@@ -52,12 +52,13 @@
         <section id="profile-editing">
             <h2>Profile Editing</h2>
             <!-- ...existing code... -->
-            <form>
+            <form action="" method="get" enctype="multipart/form-data">
                 <label for="profile-picture">Profile Picture:</label>
                 <input type="file" id="profile-picture" name="profile-picture" class="input-field">
                 <label for="bio">Bio:</label>
                 <textarea id="bio" name="bio" class="input-field" placeholder="Tell us about yourself"></textarea>
                 <!-- ...existing code... -->
+                <button type="submit" class="save-button">Save</button>
             </form>
         </section>
     </div>

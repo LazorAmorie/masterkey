@@ -8,14 +8,13 @@
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Global Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
+
 /* Send Money Page */
 .send-money-container {
     max-width: 600px;
@@ -84,7 +83,7 @@ body {
 }
 
 .input-container input[type="text"],
-.input-container input[type="text"],
+.input-container input[type="number"],
 .input-container textarea {
     margin-top: 5px;
     padding: 10px;

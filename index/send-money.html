@@ -56,16 +56,16 @@
                 } else if (this.dataset.method === 'credit-card') {
                     formContainer.innerHTML = `
                         <label for="card-number">Card Number:</label>
-                        <input type="text" id="card-number" name="card-number" class="input-field" placeholder="Enter card number">
+                        <input type="text" id="card-number" name="card-number" class="input-field" placeholder="Enter card number" required>
                         <label for="amount">Amount:</label>
-                        <input type="text" id="amount" name="amount" class="input-field" placeholder="Enter amount">
+                        <input type="text" id="amount" name="amount" class="input-field" placeholder="Enter amount" required>
                     `;
                 } else if (this.dataset.method === 'bank-transfer') {
                     formContainer.innerHTML = `
                         <label for="account-number">Account Number:</label>
-                        <input type="text" id="account-number" name="account-number" class="input-field" placeholder="Enter account number">
+                        <input type="text" id="account-number" name="account-number" class="input-field" placeholder="Enter account number" required>
                         <label for="amount">Amount:</label>
-                        <input type="text" id="amount" name="amount" class="input-field" placeholder="Enter amount">
+                        <input type="text" id="amount" name="amount" class="input-field" placeholder="Enter amount" required>
                     `;
                 }
             });
@@ -79,9 +79,9 @@
                 this.classList.add('selected');
                 formContainer.innerHTML = `
                     <label for="phone-number">Phone Number:</label>
-                    <input type="text" id="phone-number" name="phone-number" class="input-field" placeholder="Enter phone number">
+                    <input type="text" id="phone-number" name="phone-number" class="input-field" placeholder="Enter phone number" required>
                     <label for="amount">Amount:</label>
-                    <input type="text" id="amount" name="amount" class="input-field" placeholder="Enter amount">
+                    <input type="text" id="amount" name="amount" class="input-field" placeholder="Enter amount" required>
                 `;
             });
         });
