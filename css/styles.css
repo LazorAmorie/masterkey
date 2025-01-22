@@ -44,6 +44,7 @@ body {
     font-size: 0.9rem;
     cursor: pointer;
     transition: color 0.3s;
+    color: var(--main-color);
 }
 
 .profile-icon {
@@ -51,16 +52,6 @@ body {
     cursor: pointer;
     transition: color 0.3s;
     color: var(--main-color);
-}
-
-.profile {
-    display: none; /* Initially hidden */
-    align-items: center;
-    gap: 10px;
-}
-
-.profile :hover {
-    display: block;
 }
 
 /* Notification Dropdown */
@@ -130,7 +121,7 @@ body {
 /* Quick Access Tiles */
 .quick-access {
     display: grid;
-    grid-template-columns: repeat(auto minmax(150px, 1fr));
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 15px;
 }
 
