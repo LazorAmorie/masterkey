@@ -38,58 +38,76 @@
         <!-- Account Balance Widget -->
         <section class="balance-widget">
             <h2>Total Balance</h2>
-            <p>$5,678.90</p>
+            <p id="total-balance">$0.00</p>
             <div class="balance-actions">
                 <button onclick="window.location.href='./index/add-funds.html'">Add Funds</button>
                 <button onclick="window.location.href='./index/withdraw-funds.html'">Withdraw</button>
             </div>
-            
         </section>
 
         <!-- Quick Access Tiles -->
-        <section class="quick-access">
-            <div class="tile" onclick="window.location.href='./index/send-money.html'">
-                <i class="fa-solid fa-exchange-alt"></i> <!-- Money transfer icon -->
-                Send Money
-            </div> <!-- Link to send money page -->
-            <div class="tile">Pay Bills</div>
-            <div class="tile">Scan QR Code</div>
-            <div class="tile">Transaction History</div>
+        <section class="quick-access" id="quick-access-tiles">
+            <!-- Tiles will be dynamically generated here -->
         </section>
 
         <!-- Transactions Overview -->
         <section class="transactions-overview">
             <h2>Recent Transactions</h2>
-            <ul>
-                <li><span>🛒 Payment</span>     <span>$45.00</span> <span>12/07/2024</span></li>
-                <li><span>📥 Received</span>    <span>$120.00</span> <span>12/06/2024</span></li>
-                <li><span>🏠 Rent</span>        <span>$1,000.00</span> <span>12/05/2024</span></li>
+            <ul id="transactions-list">
+                <!-- Transactions will be dynamically generated here -->
             </ul>
             <button class="view-all">View All Transactions</button>
         </section>
     </div>
 
-        <!-- Footer Section -->
-        <footer class="footer">
-            <p>&copy; 2024 FinTech App. All rights reserved.</p>
-            <nav class="footer-nav">
-                <a href="#privacy-policy">Privacy Policy</a> | 
-                <a href="#terms-of-service">Terms of Service</a> | 
-                <a href="#contact-us">Contact Us</a>
-            </nav>
-        </footer>
-</body>
-<script src="./scripts/js.js"></script>
-</html>
-<script>
-        window.addEventListener('load', function() {
+    <!-- QR Code Modal -->
+    <div id="qr-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Scan QR Code</h2>
+            <div id="qr-code"></div>
+        </div>
+    </div>
 
-            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-                console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            }, function(err) {
-                console.log('ServiceWorker registration failed: ', err);
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 FinTech App. All rights reserved.</p>
+        <nav class="footer-nav">
+            <a href="#privacy-policy">Privacy Policy</a> | 
+            <a href="#terms-of-service">Terms of Service</a> | 
+            <a href="#contact-us">Contact Us</a>
+        </nav>
+    </footer>
+
+    <script src="./scripts/js.js"></script>
+    <script src="./scripts/dynamic-content.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const qrModal = document.getElementById('qr-modal');
+            const closeButton = document.querySelector('.close-button');
+            const qrCodeContainer = document.getElementById('qr-code');
+
+            document.querySelector('.tile[data-action="scan-qr"]').addEventListener('click', function() {
+                qrModal.style.display = 'block';
+                qrCodeContainer.innerHTML = ''; // Clear previous QR code
+                new QRCode(qrCodeContainer, {
+                    text: "https://lazoramorie.github.io/masterkey/", // Example URL, replace with dynamic content if needed
+                    width: 128,
+                    height: 128
+                });
+            });
+
+            closeButton.addEventListener('click', function() {
+                qrModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === qrModal) {
+                    qrModal.style.display = 'none';
+                }
             });
         });
-    
-</script>
+    </script>
+</body>
 </html>
