@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const tiles = [
                 { icon: 'fa-exchange-alt', text: 'Send Money', link: 'send-money.html' },
                 { icon: 'fa-file-invoice-dollar', text: 'Pay Bills', link: '#' },
-                { icon: 'fa-qrcode', text: 'Scan QR Code', action: 'scan-qr' },
+                { icon: 'fa-qrcode ', text: 'Scan QR Code', action: 'scan-qr' },
                 { icon: 'fa-history', text: 'Transaction History', link: '#' }
             ];
             tiles.forEach(tile => {

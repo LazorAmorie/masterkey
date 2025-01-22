@@ -99,13 +99,18 @@ document.addEventListener('DOMContentLoaded', function() {
         .replace(/\-/g, '+')
         .replace(/_/g, '/');
 
-      const rawData = window.atob(base64);
-      const outputArray = new Uint8Array(rawData.length);
+      try {
+        const rawData = window.atob(base64);
+        const outputArray = new Uint8Array(rawData.length);
 
-      for (let i = 0; i < rawData.length; ++i) {
-        outputArray[i] = rawData.charCodeAt(i);
+        for (let i = 0; i < rawData.length; ++i) {
+          outputArray[i] = rawData.charCodeAt(i);
+        }
+        return outputArray;
+      } catch (e) {
+        console.error('Invalid base64 string:', base64String);
+        throw e;
       }
-      return outputArray;
     }
   };
 
