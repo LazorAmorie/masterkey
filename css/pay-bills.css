@@ -37,7 +37,7 @@
     cursor: pointer;
     text-align: center;
     font-size: 1.2em;
-    color: #333;
+    color: #111010;
 }
 
 .icon-btn i {
@@ -52,6 +52,19 @@
 
 .icon-btn:hover {
     color: #007bff;
+}
+
+.icon-btn i.fa-bolt {
+    color: #fcce00;
+}
+.icon-btn i.fa-tint {
+    color: #0c8fe7;
+}
+.icon-btn i.fa-wifi {
+    color: #b5d0e2;
+}
+.icon-btn i.fa-home {
+    color: #2b042b;
 }
 
 .form-control {
