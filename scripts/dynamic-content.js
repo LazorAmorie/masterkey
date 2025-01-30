@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
         renderQuickAccessTiles() {
             const tiles = [
                 { icon: 'fa-exchange-alt', text: 'Send Money', link: './index/send-money.html' },
-                { icon: 'fa-file-invoice-dollar', text: 'Pay Bills', link: '#' },
+                { icon: 'fa-file-invoice-dollar', text: 'Pay Bills', link: './index/pay-bills.html' },
                 { icon: 'fa-qrcode ', text: 'Scan QR Code', action: 'scan-qr' },
                 { icon: 'fa-history', text: 'Transaction History', link: '#' }
             ];

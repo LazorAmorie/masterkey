@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay Bills</title>
+    <link rel="stylesheet" href="../css/pay-bills.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="pay-bills">
+            <h1>Pay Bills</h1>
+            <div class="bill-icons">
+                <button class="icon-btn" onclick="showBillForm('electricity')">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>Electricity</span>
+                </button>
+                <button class="icon-btn" onclick="showBillForm('water')">
+                    <i class="fa-solid fa-tint"></i>
+                    <span>Water</span>
+                </button>
+                <button class="icon-btn" onclick="showBillForm('internet')">
+                    <i class="fa-solid fa-wifi"></i>
+                    <span>Internet</span>
+                </button>
+                <button class="icon-btn" onclick="showBillForm('rent')">
+                    <i class="fa-solid fa-home"></i>
+                    <span>Rent</span>
+                </button>
+            </div>
+            <div id="bill-form" class="form-group">
+                <!-- Dynamic form fields will be inserted here -->
+            </div>
+            <ul class="bills-list">
+                <!-- ...existing code... -->
+            </ul>
+        </div>
+    </div>
+    <div id="notification" class="notification"></div>
+    <script src="../js/dynamic-content.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.pay-bills {
+    text-align: center;
+}
+
+.pay-bills h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.header .title {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.bill-selection {
+    margin-bottom: 20px;
+}
+
+.bill-icons {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2em;
+    color: #111010;
+}
+
+.icon-btn i {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.icon-btn span {
+    display: block;
+    margin-top: 5px;
+}
+
+.icon-btn:hover {
+    color: #007bff;
+}
+
+.icon-btn i.fa-bolt {
+    color: #fcce00;
+}
+.icon-btn i.fa-tint {
+    color: #0c8fe7;
+}
+.icon-btn i.fa-wifi {
+    color: #b5d0e2;
+}
+.icon-btn i.fa-home {
+    color: #2b042b;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.bills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.bills-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.bills-list li span {
+    flex: 1;
+}
+
+.bills-list li button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+}
+
+.bills-list li button:hover {
+    background-color: #218838;
+}
+
+.notification {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
