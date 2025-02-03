@@ -1,5 +1,7 @@
-document.addEventListener('DOMCoded', function() {
+document.addEventListener('DOMContentLoaded', function() {
     const transactionList = document.getElementById('transaction-list');
+    const transactionConfirmation = document.getElementById('transaction-confirmation');
+    const expenditureChartCtx = document.getElementById('expenditurePieChart').getContext('2d');
 
     // Example data, replace with actual data fetching logic
     const transactions = [
@@ -8,6 +10,21 @@ document.addEventListener('DOMCoded', function() {
         // Add more transactions as needed
     ];
 
+    const expenditureData = {
+        labels: ['Rent', 'Groceries', 'Utilities', 'Entertainment', 'Others'],
+        datasets: [{
+            data: [500, 200, 150, 100, 50], // Example data, replace with actual data
+            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+        }]
+    };
+
+    // Generate transaction confirmation message
+    const confirmationMessage = document.createElement('div');
+    confirmationMessage.classList.add('confirmation-message');
+    confirmationMessage.innerHTML = `<p>Your recent transaction was successful!</p>`;
+    transactionConfirmation.appendChild(confirmationMessage);
+
+    // Generate recent transactions
     transactions.forEach(transaction => {
         const transactionItem = document.createElement('div');
         transactionItem.classList.add('transaction-item');
@@ -17,5 +34,23 @@ document.addEventListener('DOMCoded', function() {
             <p>Description: ${transaction.description}</p>
         `;
         transactionList.appendChild(transactionItem);
+    });
+
+    // Generate expenditure pie chart
+    new Chart(expenditureChartCtx, {
+        type: 'pie',
+        data: expenditureData,
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Overall Expenditure'
+                }
+            }
+        }
     });
 });
