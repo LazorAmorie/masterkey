@@ -1,4 +1,7 @@
 body {
+    
+    --primary-color: #F0F0F0;
+    --secondary-color: #A2A3CB;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -46,8 +49,10 @@ main {
 }
 
 #expenditurePieChart {
+    display: flex;
     max-width: 300px; /* Set a maximum width for the chart */
     max-height: 300px; /* Set a maximum height for the chart */
+
 }
 
 @media (min-width: 768px) {
@@ -65,8 +70,10 @@ main {
 footer {
     background-color: #f8f9fa;
     text-align: center;
-    padding: 1em;
+    padding: 0.5em;
     position: fixed;
+    margin-top: 2px;
     bottom: 0;
+    z-index: 1;
     width: 100%;
 }
