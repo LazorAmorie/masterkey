@@ -1,7 +1,4 @@
 body {
-    
-    --primary-color: #F0F0F0;
-    --secondary-color: #A2A3CB;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
@@ -32,39 +29,48 @@ main {
 }
 
 #expenditure-overview {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     margin-bottom: 2em;
 }
 
 #expenditure-list {
-    flex: 1;
-    padding-right: 2em;
+    width: 100%;
+    margin-bottom: 2em;
 }
 
 #expenditure-chart {
-    flex: 1;
+    width: 100%;
     text-align: center;
+    margin-bottom: 2em;
 }
 
 #expenditurePieChart {
-    display: flex;
-    max-width: 300px; /* Set a maximum width for the chart */
-    max-height: 300px; /* Set a maximum height for the chart */
+    max-width: 600px; /* Set a maximum width for the chart */
+    max-height: 600px; /* Set a maximum height for the chart */
 
 }
 
 @media (min-width: 768px) {
     #expenditurePieChart {
-        max-width: 200px; /* Set a smaller maximum width for the desktop */
-        max-height: 200px; /* Set a smaller maximum height for the desktop */
+        max-width: 400px; /* Set a smaller maximum width for the desktop */
+        max-height: 400px; /* Set a smaller maximum height for the desktop */
     }
 }
 .transaction-item {
     border: 1px solid #ddd;
     padding: 1em;
     margin-bottom: 1em;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.transaction-item p{
+    margin: 0.5em 0;
+}
+
+.transaction-item p:first-child {
+    font-weight: bold;
 }
 
 footer {

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const transactionList = document.getElementById('transaction-list');
     const transactionConfirmation = document.getElementById('transaction-confirmation');
-    const expenditureChartCtx = document.getElementById('expenditurePieChart').getContext('2d');
+    const expenditureChartCtx = document.getElementById('expenditureBarChart').getContext('2d');
 
     // Example data, replace with actual data fetching logic
     const transactions = [
@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
     confirmationMessage.innerHTML = `<p>Your recent transaction was successful!</p>`;
     transactionConfirmation.appendChild(confirmationMessage);
 
+    // Make the comfirmation message disappear after 5 seconds 
+    setTimeout(() =>{
+        confirmationMessage.remove();
+    }, 5000);
+
     // Generate recent transactions
     transactions.forEach(transaction => {
         const transactionItem = document.createElement('div');
@@ -36,9 +41,9 @@ document.addEventListener('DOMContentLoaded', function() {
         transactionList.appendChild(transactionItem);
     });
 
-    // Generate expenditure pie chart
+    // Generate expenditure bar chart
     new Chart(expenditureChartCtx, {
-        type: 'pie',
+        type: 'bar',
         data: expenditureData,
         options: {
             responsive: true,
