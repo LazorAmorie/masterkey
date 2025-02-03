@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { icon: 'fa-exchange-alt', text: 'Send Money', link: './index/send-money.html' },
                 { icon: 'fa-file-invoice-dollar', text: 'Pay Bills', link: './index/pay-bills.html' },
                 { icon: 'fa-qrcode ', text: 'Scan QR Code', action: 'scan-qr' },
-                { icon: 'fa-history', text: 'Transaction History', link: '#' }
+                { icon: 'fa-history', text: 'Transaction History', link: './index/transaction-history.html' }
             ];
             tiles.forEach(tile => {
                 const tileElement = document.createElement('div');
