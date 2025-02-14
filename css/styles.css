@@ -57,16 +57,18 @@ body {
 /* Notification Dropdown */
 .notification-dropdown {
     display: none; /* Initially hidden */
-    position: absolute; /* Absolute position */
+    position: absolute;
     right: 10px;
     top: 50px;
-    background-color: #fff;
+    background-color: var(--accent-color);
     box-shadow: var(--box-shadow);
     border-radius: 8px;
     width: 250px;
     z-index: 1000;
-    margin-top: 10px; /* Add margin to separate from the icon */
+    margin-top: 10px;
+    transition: opacity 0.3s ease;
 }
+
 
 .notification-dropdown ul {
     list-style: none;
@@ -75,13 +77,30 @@ body {
 }
 
 .notification-dropdown ul li {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
+    padding: 12px;
+    border-bottom: 1px solid var(--secondary-color);
+    transition: background-color 0.3s ease;
+}
+
+.notification-dropdown ul li:hover {
+    background-color: var(--primary-color);
 }
 
 .notification-dropdown ul li:last-child {
     border-bottom: none;
 }
+
+.notification-dropdown ul li a {
+    color: var(--main-color);
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.notification-dropdown ul li a:hover {
+    color: var(--secondary-color);
+}
+
 
 /* Balance Widget */
 .balance-widget {
@@ -272,4 +291,3 @@ body {
 .footer-nav a:hover {
     color: var(--secondary-color);
 }
-
