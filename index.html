@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,35 +11,76 @@
 </head>
 <body>
     <div class="dashboard">
-        <!-- Header -->
-        <header class="header">
-            <a href="./index/settings.html" class="icon-style_header profile-icon"><i class="fa-solid fa-user"></i></a>           
+        <!-- Taskbar Navigation -->
+        <nav class="taskbar" id="taskbar">
+            <ul>
+                <li><a href="./index.html" class="active"><i class="fa-solid fa-home"></i>Home</a></li>
+                <li><a href="./index/portfolio.html"><i class="fa-solid fa-chart-line"></i>Portfolio</a></li>
+                <li><a href="./index/market.html"><i class="fa-solid fa-chart-bar"></i>Market</a></li>
+                <li><a href="./index/settings.html"><i class="fa-solid fa-cogs"></i>Settings</a></li>
+                <li><a href="./index/logout.html"><i class="fa-solid fa-sign-out"></i>Logout</a></li>
+            </ul>
+        </nav>
+        <div class="taskbar-toggle" id="taskbar-toggle"><i class="fa-solid fa-bars"></i></div>
             
-            <h1 class="welcome-message">Hello, GEORGE HUSSEIN!</h1>
-                <a href="#" class="icon-style_header notification-icon"><i class="fa-solid fa-bell"></i></a> <!-- Link to notification page -->
-                <div class="notification-dropdown">
-                    <ul>
-                        <li><a href="./index/notification.html">Notification 1</a></li>
-                        <li><a href="./index/notification.html">Notification 2</a></li>
-                        <li><a href="./index/notification.html">Notification 3</a></li>
-                    </ul>
+        <div class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <a href="./index/settings.html" class="icon-style_header profile-icon"><i class="fa-solid fa-user"></i></a>
                 </div>
-            
-        </header>
+                <div class="header-center">
+                    <h1 class="welcome-message">Hello, GEORGE HUSSEIN</h1>
+                </div>
+                <div class="header-right">
+                    <a href="#" class="icon-style_header notification-icon"><i class="fa-solid fa-bell"></i></a>
+                    <div class="notification-dropdown">
+                        <ul>
+                            <li><a href="./index/notification.html">Notification 1</a></li>
+                            <li><a href="./index/notification.html">Notification 2</a></li>
+                            <li><a href="./index/notification.html">Notification 3</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </header>
 
-        <!-- Account Balance Widget -->
-        <section class="balance-widget">
-            <h2>Total Balance</h2>
-            <p id="total-balance">$0.00</p>
-            <div class="balance-actions">
-                <button onclick="window.location.href='./index/add-funds.html'">Add Funds</button>
-                <button onclick="window.location.href='./index/withdraw-funds.html'">Withdraw</button>
-            </div>
-        </section>
+            <!-- Account Balance Widget -->
+            <section class="balance-widget">
+                <h2>Total Balance</h2>
+                <p id="total-balance">$0.00</p>
+                <div class="balance-actions">
+                    <button onclick="window.location.href='./index/add-funds.html'">Add Funds</button>
+                    <button onclick="window.location.href='./index/withdraw-funds.html'">Withdraw</button>
+                </div>
+                <div class="balance-chart">
+                    <!-- Chart will be dynamically generated here -->
+                    <canvas id="balance-chart"></canvas>
+                </div>
+            </section>
+        </div>
 
         <!-- Quick Access Tiles -->
         <section class="quick-access" id="quick-access-tiles">
-            <!-- Tiles will be dynamically generated here -->
+            <div class="tile">
+                <i class="fa-solid fa-wallet"></i>
+                <div class="tile-title">Wallet</div>
+                <div class="tile-description">Manage your wallet</div>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-exchange-alt"></i>
+                <div class="tile-title">Transfer</div>
+                <div class="tile-description">Transfer funds</div>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-chart-line"></i>
+                <div class="tile-title">Invest</div>
+                <div class="tile-description">Invest in stocks</div>
+            </div>
+            <div class="tile">
+                <i class="fa-solid fa-credit-card"></i>
+                <div class="tile-title">Cards</div>
+                <div class="tile-description">Manage your cards</div>
+            </div>
         </section>
 
         <!-- Transactions Overview -->
@@ -48,6 +90,11 @@
                 <!-- Transactions will be dynamically generated here -->
             </ul>
             <button class="view-all" onclick="location.href='./index/transaction-history.html'">View All Transactions</button>
+        </section>
+
+        <!-- Financial Insights -->
+        <section class="financial-insights" id="financial-insights">
+            <!-- Financial insights will be dynamically loaded here -->
         </section>
     </div>
 
@@ -73,32 +120,5 @@
     <script src="./scripts/js.js"></script>
     <script src="./scripts/dynamic-content.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const qrModal = document.getElementById('qr-modal');
-            const closeButton = document.querySelector('.close-button');
-            const qrCodeContainer = document.getElementById('qr-code');
-
-            document.querySelector('.tile[data-action="scan-qr"]').addEventListener('click', function() {
-                qrModal.style.display = 'block';
-                qrCodeContainer.innerHTML = ''; // Clear previous QR code
-                new QRCode(qrCodeContainer, {
-                    text: "https://lazoramorie.github.io/masterkey/", // Example URL, replace with dynamic content if needed
-                    width: 128,
-                    height: 128
-                });
-            });
-
-            closeButton.addEventListener('click', function() {
-                qrModal.style.display = 'none';
-            });
-
-            window.addEventListener('click', function(event) {
-                if (event.target === qrModal) {
-                    qrModal.style.display = 'none';
-                }
-            });
-        });
-    </script>
 </body>
 </html>

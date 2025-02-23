@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
       this.closeButton = document.getElementById('close-button');
       this.profileIcon = document.querySelector('.profile-icon');
       this.notificationIcon = document.querySelector('.notification-icon');
+      this.taskbar = document.getElementById('taskbar');
+      this.taskbarToggle = document.getElementById('taskbar-toggle');
+      this.financialInsights = document.getElementById('financial-insights');
     },
     bindEvents() {
       if (this.openButton) {
@@ -37,6 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         console.log('notification-icon not found');
       }
+
+      if (this.taskbarToggle) {
+        this.taskbarToggle.addEventListener('click', this.toggleTaskbar.bind(this));
+      } else {
+        console.log('taskbar-toggle not found');
+      }
+
+      window.addEventListener('scroll', this.handleScroll.bind(this));
     },
     openSidebar() {
       const sidebar = document.getElementById('sidebar');
@@ -57,6 +68,34 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleNotificationDropdown() {
       const dropdown = document.querySelector('.notification-dropdown');
       dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
+    },
+    toggleTaskbar() {
+      this.taskbar.classList.toggle('open');
+    },
+    handleScroll() {
+      const transactionsSection = document.querySelector('.transactions-overview');
+      const transactionsSectionBottom = transactionsSection.getBoundingClientRect().bottom;
+      if (transactionsSectionBottom < window.innerHeight && !this.financialInsightsLoaded) {
+        this.loadFinancialInsights();
+        this.financialInsightsLoaded = true;
+      }
+    },
+    loadFinancialInsights() {
+      const insights = [
+        { title: 'Investment Tips', content: 'Diversify your portfolio to minimize risk.' },
+        { title: 'Saving Strategies', content: 'Set aside at least 20% of your income for savings.' },
+        { title: 'Market Trends', content: 'Stay updated with the latest market trends to make informed decisions.' }
+      ];
+
+      insights.forEach(insight => {
+        const insightItem = document.createElement('div');
+        insightItem.className = 'insight-item';
+        insightItem.innerHTML = `
+          <h3>${insight.title}</h3>
+          <p>${insight.content}</p>
+        `;
+        this.financialInsights.appendChild(insightItem);
+      });
     },
     registerServiceWorker() {
       if ('serviceWorker' in navigator && 'PushManager' in window) {
