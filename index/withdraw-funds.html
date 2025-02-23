@@ -23,26 +23,58 @@
                 
                 <label for="withdraw-method">Select Withdrawal Method</label>
                 <div class="withdraw-methods">
-                    <button type="button" class="method">
+                    <button type="button" class="method" data-method="credit-card">
                         <i class="fa-solid fa-credit-card"></i>
                         Credit Card
                     </button>
-                    <button type="button" class="method">
+                    <button type="button" class="method" data-method="paypal">
                         <i class="fa-brands fa-paypal"></i>
                         PayPal
                     </button>
-                    <button type="button" class="method">
+                    <button type="button" class="method" data-method="bank-transfer">
                         <i class="fa-solid fa-university"></i>
                         Bank Transfer
                     </button>
-                    <button type="button" class="method">
+                    <button type="button" class="method" data-method="mobile-wallet">
                         <i class="fa-solid fa-wallet"></i>
                         Mobile Wallet
                     </button>
+                </div>
+
+                <div id="credit-card-options" class="method-options">
+                    <label for="credit-company">Select Credit Company</label>
+                    <select id="credit-company">
+                        <option value="visa">Visa</option>
+                        <option value="mastercard">MasterCard</option>
+                        <option value="amex">American Express</option>
+                    </select>
+                </div>
+
+                <div id="paypal-options" class="method-options">
+                    <label for="paypal-email">Enter PayPal Email</label>
+                    <input type="email" id="paypal-email" placeholder="Enter PayPal email">
+                </div>
+
+                <div id="bank-transfer-options" class="method-options">
+                    <label for="bank">Select Bank</label>
+                     <select id="bank">
+                        <option value="bank1">Bank 1</option>
+                        <option value="bank2">Bank 2</option>
+                        <option value="bank3">Bank 3</option>
+                     </select> 
+                </div>
+                
+                <div id="mobile-wallet-options" class="method-options">
+                    <label for="mobile-wallet">Select Mobile Wallet</label>
+                    <select id="mobile-wallet">
+                        <option value="tnm">TNM Mpamba</option>
+                        <option value="aitel">Airtel Money</option>
+                    </select>    
                 </div>
                 <button type="submit" class="submit-button">Withdraw</button>
             </form>
         </section>
     </div>
+    <script src="../js/withdraw-funds.js"></script>
 </body>
 </html>
