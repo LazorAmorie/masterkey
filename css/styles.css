@@ -70,6 +70,7 @@ body {
     margin-top: 10px; /* Add margin to separate from the icon */
 }
 
+
 .notification-dropdown ul {
     list-style: none;
     padding: 0;
@@ -84,6 +85,18 @@ body {
 .notification-dropdown ul li:last-child {
     border-bottom: none;
 }
+
+.notification-dropdown ul li a {
+    color: var(--main-color);
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.notification-dropdown ul li a:hover {
+    color: var(--secondary-color);
+}
+
 
 /* Balance Widget */
 .balance-widget {
@@ -361,6 +374,7 @@ body {
     color: var(--secondary-color);
 }
 
+
 /* Taskbar */
 .taskbar {
     position: fixed;
@@ -411,6 +425,4 @@ body {
 }
 
 .dynamic-item {
-    display: none; /* Hide dynamic items */
-}
-
+    display: none; /* Hide dynamic items */}
