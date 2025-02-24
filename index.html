@@ -47,59 +47,66 @@
             </ul>
         </nav>
         <div class="main-content">
-            <!-- Account Balance Widget -->
-            <section class="balance-widget">
-                <h2>Total Balance</h2>
-                <p id="total-balance">$0.00</p>
-                <div class="balance-actions">
-                    <button onclick="window.location.href='./index/add-funds.html'">Add Funds</button>
-                    <button onclick="window.location.href='./index/withdraw-funds.html'">Withdraw</button>
+            <!-- Financial Access Container -->
+            <section class="financial-access">
+                <!-- Balance Widget -->
+                <div class="tile balance-tile">
+                    <h2>Total Balance</h2>
+                    <p id="total-balance">$0.00</p>
+                    <div class="balance-actions">
+                        <button onclick="window.location.href='./index/add-funds.html'">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add Funds</span>
+                        </button>
+                        <button onclick="window.location.href='./index/withdraw-funds.html'">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Withdraw</span>
+                        </button>
+                    </div>
                 </div>
-               <!-- <div class="balance-chart">
-                  Chart will be dynamically generated here
-                    <canvas id="balance-chart"></canvas>
+
+                <!-- Financial Access Tiles -->
+                <div class="tile">
+                    <i class="fa-solid fa-wallet"></i>
+                    <div class="tile-title">Wallet</div>
+                    <div class="tile-description">Manage your wallet</div>
                 </div>
-            -->
+                <div class="tile">
+                    <i class="fa-solid fa-exchange-alt"></i>
+                    <div class="tile-title">Transfer</div>
+                    <div class="tile-description">Transfer funds</div>
+                </div>
+                <div class="tile">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div class="tile-title">Invest</div>
+                    <div class="tile-description">Invest in stocks</div>
+                </div>
+                <div class="tile">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <div class="tile-title">Cards</div>
+                    <div class="tile-description">Manage your cards</div>
+                </div>
+            </section>
+
+            <!-- Rest of the content -->
+            <section class="quick-access" id="quick-access-tiles">
+                <!-- Quick access content -->
+            </section>
+
+            <!-- Transactions Overview -->
+            <section class="transactions-overview">
+                <h2>Recent Transactions</h2>
+                <ul id="transactions-list">
+                    <!-- Transactions will be dynamically generated here -->
+                </ul>
+                <button class="view-all" onclick="location.href='./index/transaction-history.html'">View All Transactions</button>
+            </section>
+
+            <!-- Financial Insights -->
+            <section class="financial-insights" id="financial-insights">
+                <!-- Cards will be dynamically generated here -->
             </section>
         </div>
-
-        <!-- Quick Access Tiles -->
-        <section class="quick-access" id="quick-access-tiles">
-            <div class="tile">
-                <i class="fa-solid fa-wallet"></i>
-                <div class="tile-title">Wallet</div>
-                <div class="tile-description">Manage your wallet</div>
-            </div>
-            <div class="tile">
-                <i class="fa-solid fa-exchange-alt"></i>
-                <div class="tile-title">Transfer</div>
-                <div class="tile-description">Transfer funds</div>
-            </div>
-            <div class="tile">
-                <i class="fa-solid fa-chart-line"></i>
-                <div class="tile-title">Invest</div>
-                <div class="tile-description">Invest in stocks</div>
-            </div>
-            <div class="tile">
-                <i class="fa-solid fa-credit-card"></i>
-                <div class="tile-title">Cards</div>
-                <div class="tile-description">Manage your cards</div>
-            </div>
-        </section>
-
-        <!-- Transactions Overview -->
-        <section class="transactions-overview">
-            <h2>Recent Transactions</h2>
-            <ul id="transactions-list">
-                <!-- Transactions will be dynamically generated here -->
-            </ul>
-            <button class="view-all" onclick="location.href='./index/transaction-history.html'">View All Transactions</button>
-        </section>
-
-        <!-- Financial Insights -->
-        <section class="financial-insights" id="financial-insights">
-            <!-- Cards will be dynamically generated here -->
-        </section>
     </div>
 
     <!-- QR Code Modal -->

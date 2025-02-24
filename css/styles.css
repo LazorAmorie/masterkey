@@ -133,8 +133,6 @@ body {
     padding: 20px;
     text-align: center;
     box-shadow: var(--box-shadow);
-    margin: 0 auto; /* Center the widget */
-    max-width: 600px; /* Optional: limit the maximum width */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -166,6 +164,10 @@ body {
     transition: background 0.3s ease, transform 0.3s ease;
 }
 
+.balance-actions button i {
+    color: #000;
+}
+
 .balance-actions button:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
@@ -176,20 +178,22 @@ body {
     display: grid;
     grid-template-columns: repeat(2, minmax(150px, 1fr));
     gap: 15px;
+    margin-top: 30px;
 }
 
+/* Unified Tile Styling */
 .tile {
     background: var(--main-color);
     color: var(--accent-color);
     border-radius: 10px;
     padding: 20px;
     text-align: center;
-    font-size: 1.2rem;
     box-shadow: var(--box-shadow);
-    cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .tile:hover {
@@ -229,6 +233,102 @@ body {
 .tile-description {
     font-size: 1rem;
     color: var(--accent-color);
+}
+
+/* Balance Tile Specific Styling */
+.balance-tile {
+    background: var(--main-color);
+}
+
+.balance-tile h2 {
+    color: var(--accent-color);
+    margin: 0 0 10px 0;
+    font-size: 1.2rem;
+}
+
+.balance-tile p {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin: 10px 0;
+}
+
+.balance-tile .balance-actions {
+    display: flex;
+    flex-direction: row; /* Changed from column to row */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Spacing between buttons */
+    margin-top: 15px;
+    width: 100%;
+}
+
+.balance-tile button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    min-width: 100px;
+    flex: 1;  /* Allow buttons to grow equally */
+    max-width: 150px; /* Prevent buttons from getting too wide */
+    border: none;
+    border-radius: 5px;
+    background: var(--accent-color);
+    color: var(--main-color);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative; /* For icon positioning */
+}
+
+.balance-tile button i {
+    display: none; /* Hide icons by default */
+    font-size: 1.2rem;
+    color: var(--main-color); /* Match button text color */
+}
+
+.balance-tile button span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.balance-tile button:hover {
+    background: var(--secondary-color);
+}
+
+.balance-tile button:hover i {
+    color: var(--accent-color); /* Change icon color on hover */
+}
+
+/* Responsive adjustments for balance actions */
+@media (max-width: 768px) {
+    .balance-tile .balance-actions {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .balance-tile button {
+        width: 100%; /* Make buttons full width on mobile */
+        min-width: 0; /* Remove min-width constraint */
+        padding: 12px; /* Increased padding for better touch target */
+        max-width: none;
+        aspect-ratio: 1; /* Make buttons square for icons */
+        max-width: 50px; /* Fixed size for mobile */
+    }
+
+    .balance-tile button i {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        font-size: 1.4rem; /* Slightly larger icons on mobile */
+    }
+
+    .balance-tile button span {
+        display: none; /* Hide text on mobile */
+    }
 }
 
 /* Transactions Overview */
@@ -314,6 +414,29 @@ body {
     line-height: 1.5;
 }
 
+/* Top Widgets Layout */
+.top-widgets-container {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.balance-widget {
+    /* Remove max-width and margin constraints */
+    margin: 0;
+    max-width: none;
+}
+
+/* Financial Access Grid Layout */
+.financial-access {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
 /* Responsive Design */
 @media (min-width: 768px) {
     .dashboard {
@@ -342,8 +465,30 @@ body {
 }
 
 /* Responsive adjustments */
+@media (max-width: 1024px) {
+    .top-widgets-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1200px) {
+    .financial-access {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
+    .financial-access {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .financial-insights {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .financial-access {
         grid-template-columns: 1fr;
     }
 }
