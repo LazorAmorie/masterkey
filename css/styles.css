@@ -1,5 +1,8 @@
-/* Global Variables */
+* {
+    box-sizing: border-box;
+}
 
+/* Global Variables */
 :root {
     --main-color: #1D6282;
     --primary-color: rgb(231, 231, 231);
