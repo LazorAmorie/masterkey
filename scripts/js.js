@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
       this.notificationIcon = document.querySelector('.notification-icon');
       this.taskbar = document.getElementById('taskbar');
       this.taskbarToggle = document.getElementById('taskbar-toggle');
-      this.financialInsights = document.getElementById('financial-insights');
+      this.financialInsights = document.getElementsByClassName('insight-item');
     },
     bindEvents() {
       if (this.openButton) {
@@ -87,6 +87,9 @@ document.addEventListener('DOMContentLoaded', function() {
         { title: 'Market Trends', content: 'Stay updated with the latest market trends to make informed decisions.' }
       ];
 
+      const financialInsightsSection = document.getElementById('financial-insights');
+      financialInsightsSection.innerHTML = ''; // Clear existing content
+
       insights.forEach(insight => {
         const insightItem = document.createElement('div');
         insightItem.className = 'insight-item';
@@ -94,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <h3>${insight.title}</h3>
           <p>${insight.content}</p>
         `;
-        this.financialInsights.appendChild(insightItem);
+        financialInsightsSection.appendChild(insightItem);
       });
     },
     registerServiceWorker() {
