@@ -27,27 +27,35 @@ body {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-top: 80px; /* Add top margin to prevent content from going under header */
 }
 
 /* Header */
 .header {
     display: flex;
-    justify-content: flex;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 20px;
-    color: var(--secondary-color);
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
 }
 .header-left, .header-center, .header-right {
     display: flex;
     align-items: center;
 }
 .header-center {
-    flex-grow: 1;
-    justify-content: center;
+    display: flex;
+    align-items: center;
 }
 .welcome-message {
-    font-size: 1.8rem;
-    text-align: center;
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--main-color);
 }
 .notification-icon, .profile-icon {
     font-size: 1.5rem;
@@ -57,6 +65,23 @@ body {
 }
 .notification-icon {
     margin-left: 20px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.icon-style_header {
+    color: var(--main-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.icon-style_header:hover {
+    color: var(--secondary-color);
 }
 
 /* Notification Dropdown */

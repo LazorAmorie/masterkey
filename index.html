@@ -10,6 +10,31 @@
     <link rel="manifest" href="/index/manifest.json">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-center">
+            <h1 class="welcome-message">GEORGE HUSSEIN</h1>
+        </div>
+        <div class="header-right">
+            <a href="./index/settings.html" class="icon-style_header profile-icon" title="Settings">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="#" class="icon-style_header notification-icon">
+                <i class="fa-solid fa-bell" title="notifications"></i>
+            </a>
+            <div class="taskbar-toggle" id="taskbar-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <div class="notification-dropdown">
+                    <ul>
+                        <li><a href="./index/notification.html">Notification 1</a></li>
+                        <li><a href="./index/notification.html">Notification 2</a></li>
+                        <li><a href="./index/notification.html">Notification 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="dashboard">
         <!-- Taskbar Navigation -->
         <nav class="taskbar" id="taskbar">
@@ -22,25 +47,6 @@
             </ul>
         </nav>
         <div class="main-content">
-            <!-- Header -->
-            <header class="header">
-                <div class="header-center">
-                    <h1 class="welcome-message">Hello, GEORGE HUSSEIN</h1>
-                </div>
-                <div class="header-right">
-                    <a href="./index/settings.html" class="icon-style_header profile-icon" title="Settings"><i class="fa-solid fa-user"></i></a>
-                    <a href="#" class="icon-style_header notification-icon"><i class="fa-solid fa-bell" title="notifications"></i></a>
-                    <div class="taskbar-toggle" id="taskbar-toggle"><i class="fa-solid fa-bars"></i></div>
-                    <div class="notification-dropdown">
-                        <ul>
-                            <li><a href="./index/notification.html">Notification 1</a></li>
-                            <li><a href="./index/notification.html">Notification 2</a></li>
-                            <li><a href="./index/notification.html">Notification 3</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </header>
-
             <!-- Account Balance Widget -->
             <section class="balance-widget">
                 <h2>Total Balance</h2>
@@ -49,10 +55,11 @@
                     <button onclick="window.location.href='./index/add-funds.html'">Add Funds</button>
                     <button onclick="window.location.href='./index/withdraw-funds.html'">Withdraw</button>
                 </div>
-                <div class="balance-chart">
-                    <!-- Chart will be dynamically generated here -->
+               <!-- <div class="balance-chart">
+                  Chart will be dynamically generated here
                     <canvas id="balance-chart"></canvas>
                 </div>
+            -->
             </section>
         </div>
 
