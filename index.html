@@ -10,6 +10,31 @@
     <link rel="manifest" href="/index/manifest.json">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-center">
+            <h1 class="welcome-message">GEORGE HUSSEIN</h1>
+        </div>
+        <div class="header-right">
+            <a href="./index/settings.html" class="icon-style_header profile-icon" title="Settings">
+                <i class="fa-solid fa-user"></i>
+            </a>
+            <a href="#" class="icon-style_header notification-icon">
+                <i class="fa-solid fa-bell" title="notifications"></i>
+            </a>
+            <div class="taskbar-toggle" id="taskbar-toggle">
+                <i class="fa-solid fa-bars"></i>
+                <div class="notification-dropdown">
+                    <ul>
+                        <li><a href="./index/notification.html">Notification 1</a></li>
+                        <li><a href="./index/notification.html">Notification 2</a></li>
+                        <li><a href="./index/notification.html">Notification 3</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
     <div class="dashboard">
         <!-- Taskbar Navigation -->
         <nav class="taskbar" id="taskbar">
@@ -22,77 +47,66 @@
             </ul>
         </nav>
         <div class="main-content">
-            <!-- Header -->
-            <header class="header">
-                <div class="header-center">
-                    <h1 class="welcome-message">Hello, GEORGE HUSSEIN</h1>
-                </div>
-                <div class="header-right">
-                    <a href="./index/settings.html" class="icon-style_header profile-icon" title="Settings"><i class="fa-solid fa-user"></i></a>
-                    <a href="#" class="icon-style_header notification-icon"><i class="fa-solid fa-bell" title="notifications"></i></a>
-                    <div class="taskbar-toggle" id="taskbar-toggle"><i class="fa-solid fa-bars"></i></div>
-                    <div class="notification-dropdown">
-                        <ul>
-                            <li><a href="./index/notification.html">Notification 1</a></li>
-                            <li><a href="./index/notification.html">Notification 2</a></li>
-                            <li><a href="./index/notification.html">Notification 3</a></li>
-                        </ul>
+            <!-- Financial Access Container -->
+            <section class="financial-access">
+                <!-- Balance Widget -->
+                <div class="tile balance-tile">
+                    <h2>Total Balance</h2>
+                    <p id="total-balance">$0.00</p>
+                    <div class="balance-actions">
+                        <button onclick="window.location.href='./index/add-funds.html'" data-tooltip="Add money to your account">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>Add Funds</span>
+                        </button>
+                        <button onclick="window.location.href='./index/withdraw-funds.html'" data-tooltip="Withdraw funds to your bank account">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            <span>Withdraw</span>
+                        </button>
                     </div>
                 </div>
-            </header>
 
-            <!-- Account Balance Widget -->
-            <section class="balance-widget">
-                <h2>Total Balance</h2>
-                <p id="total-balance">$0.00</p>
-                <div class="balance-actions">
-                    <button onclick="window.location.href='./index/add-funds.html'">Add Funds</button>
-                    <button onclick="window.location.href='./index/withdraw-funds.html'">Withdraw</button>
+                <!-- Financial Access Tiles -->
+                <div class="tile">
+                    <i class="fa-solid fa-wallet"></i>
+                    <div class="tile-title">Wallet</div>
+                    <div class="tile-description">Manage your wallet</div>
                 </div>
-                <div class="balance-chart">
-                    <!-- Chart will be dynamically generated here -->
-                    <canvas id="balance-chart"></canvas>
+                <div class="tile">
+                    <i class="fa-solid fa-exchange-alt"></i>
+                    <div class="tile-title">Transfer</div>
+                    <div class="tile-description">Transfer funds</div>
+                </div>
+                <div class="tile">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <div class="tile-title">Invest</div>
+                    <div class="tile-description">Invest in stocks</div>
+                </div>
+                <div class="tile">
+                    <i class="fa-solid fa-credit-card"></i>
+                    <div class="tile-title">Cards</div>
+                    <div class="tile-description">Manage your cards</div>
                 </div>
             </section>
+
+            <!-- Rest of the content -->
+            <section class="quick-access" id="quick-access-tiles">
+                <!-- Quick access content -->
+            </section>
+
+            <!-- Transactions Overview -->
+            <section class="transactions-overview">
+                <h2>Recent Transactions</h2>
+                <ul id="transactions-list">
+                    <!-- Transactions will be dynamically generated here -->
+                </ul>
+                <button class="view-all" onclick="location.href='./index/transaction-history.html'">View All Transactions</button>
+            </section>
+
+            <!-- Financial Insights -->
+            <section class="financial-insights" id="financial-insights">
+                <!-- Cards will be dynamically generated here -->
+            </section>
         </div>
-
-        <!-- Quick Access Tiles -->
-        <section class="quick-access" id="quick-access-tiles">
-            <div class="tile">
-                <i class="fa-solid fa-wallet"></i>
-                <div class="tile-title">Wallet</div>
-                <div class="tile-description">Manage your wallet</div>
-            </div>
-            <div class="tile">
-                <i class="fa-solid fa-exchange-alt"></i>
-                <div class="tile-title">Transfer</div>
-                <div class="tile-description">Transfer funds</div>
-            </div>
-            <div class="tile">
-                <i class="fa-solid fa-chart-line"></i>
-                <div class="tile-title">Invest</div>
-                <div class="tile-description">Invest in stocks</div>
-            </div>
-            <div class="tile">
-                <i class="fa-solid fa-credit-card"></i>
-                <div class="tile-title">Cards</div>
-                <div class="tile-description">Manage your cards</div>
-            </div>
-        </section>
-
-        <!-- Transactions Overview -->
-        <section class="transactions-overview">
-            <h2>Recent Transactions</h2>
-            <ul id="transactions-list">
-                <!-- Transactions will be dynamically generated here -->
-            </ul>
-            <button class="view-all" onclick="location.href='./index/transaction-history.html'">View All Transactions</button>
-        </section>
-
-        <!-- Financial Insights -->
-        <section class="financial-insights" id="financial-insights">
-            <!-- Cards will be dynamically generated here -->
-        </section>
     </div>
 
     <!-- QR Code Modal -->
