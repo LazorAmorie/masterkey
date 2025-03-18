@@ -21,15 +21,32 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         renderQuickAccessTiles() {
             const tiles = [
-                { icon: 'fa-exchange-alt', text: 'Send Money', link: './index/send-money.html' },
-                { icon: 'fa-file-invoice-dollar', text: 'Pay Bills', link: './index/pay-bills.html' },
-                { icon: 'fa-qrcode ', text: 'Scan QR Code', action: 'scan-qr' },
-                { icon: 'fa-history', text: 'Transaction History', link: './index/transaction-history.html' }
+                { 
+                    icon: 'fa-exchange-alt', 
+                    text: 'Send Money', 
+                    link: 'index/send-money.html' 
+                }, { 
+                    icon: 'fa-file-invoice-dollar', 
+                    text: 'Pay Bills', 
+                    link: 'index/pay-bills.html' 
+                }, { 
+                    icon: 'fa-qrcode ', 
+                    text: 'Scan QR Code', 
+                    action: 'scan-qr' 
+                }, { 
+                    icon: 'fa-history', 
+                    text: 'Transaction History', 
+                    link: 'index/transaction-history.html' 
+                }
             ];
+
             tiles.forEach(tile => {
                 const tileElement = document.createElement('div');
                 tileElement.className = 'tile';
-                tileElement.innerHTML = `<i class="fa-solid ${tile.icon}"></i> ${tile.text}`;
+                tileElement.innerHTML = `
+                    <i class="fa-solid ${tile.icon}">
+                    </i> 
+                    ${tile.text}`;
                 if (tile.link) {
                     tileElement.onclick = () => window.location.href = tile.link;
                 } else if (tile.action) {
@@ -38,15 +55,39 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.quickAccessTiles.appendChild(tileElement);
             });
         },
+
         renderTransactions() {
             const transactions = [
-                { type: '🛒 Payment', amount: '$45.00', date: '12/07/2024' },
-                { type: '📥 Received', amount: '$120.00', date: '12/06/2024' },
-                { type: '🏠 Rent', amount: '$1,000.00', date: '12/05/2024' }
+                { 
+                    type: '🛒 Payment', 
+                    amount: '$45.00', 
+                    date: '12/07/2024' 
+                }, { 
+                    type: '📥 Received', 
+                    amount: '$120.00', 
+                    date: '12/06/2024'
+                }, { 
+                    type: '🏠 Rent', 
+                    amount: '$1,000.00', 
+                    date: '12/05/2024' 
+                }
             ];
+
             transactions.forEach(transaction => {
                 const transactionElement = document.createElement('li');
-                transactionElement.innerHTML = `<span>${transaction.type}</span> <span>${transaction.amount}</span> <span>${transaction.date}</span>`;
+                transactionElement.innerHTML = `
+                <span>
+                    ${transaction.type}
+                </span> 
+                <span>
+                    ${transaction.amount}
+                </span> 
+                <span>
+                    ${transaction.date}
+                </span>
+                
+                `;
+
                 this.transactionsList.appendChild(transactionElement);
             });
         }

@@ -5,13 +5,24 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Example data, replace with actual data fetching logic
     const transactions = [
-        { date: '2024-01-01', amount: '$100', description: 'Payment received' },
-        { date: '2024-01-02', amount: '$50', description: 'Payment sent' },
+        { 
+            date: '2024-01-01', 
+            amount: '$100', 
+            description: 'Payment received' 
+        }, { 
+            date: '2024-01-02', 
+            amount: '$50', 
+            description: 'Payment sent' 
+        },
         // Add more transactions as needed
     ];
 
     const expenditureData = {
-        labels: ['Rent', 'Groceries', 'Utilities', 'Entertainment', 'Others'],
+        labels: [
+            'Rent', 
+            'Groceries', 
+            'Utilities', 
+            'Entertainment', 'Others'],
         datasets: [{
             data: [500, 200, 150, 100, 50], // Example data, replace with actual data
             backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']

@@ -107,6 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
         financialInsightsSection.appendChild(insightItem);
       });
     },
+
+
+    // thiss where we start to regester sw
     registerServiceWorker() {
       if ('serviceWorker' in navigator && 'PushManager' in window) {
         navigator.serviceWorker.register('/scripts/sw.js')
@@ -128,6 +131,7 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Push messaging is not supported');
       }
     },
+    
     subscribeUser(swReg) {
       const applicationServerKey = this.urlB64ToUint8Array('YOUR_PUBLIC_VAPID_KEY');
       swReg.pushManager.subscribe({
@@ -142,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('Failed to subscribe the user: ', err);
       });
     },
+
+    
     urlB64ToUint8Array(base64String) {
       const padding = '='.repeat((4 - base64String.length % 4) % 4);
       const base64 = (base64String + padding)
