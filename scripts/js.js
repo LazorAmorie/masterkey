@@ -82,9 +82,16 @@ document.addEventListener('DOMContentLoaded', function() {
     },
     loadFinancialInsights() {
       const insights = [
-        { title: 'Investment Tips', content: 'Diversify your portfolio to minimize risk.' },
-        { title: 'Saving Strategies', content: 'Set aside at least 20% of your income for savings.' },
-        { title: 'Market Trends', content: 'Stay updated with the latest market trends to make informed decisions.' }
+        { 
+          title: 'Investment Tips', 
+          content: 'Diversify your portfolio to minimize risk.' 
+        }, { 
+          title: 'Saving Strategies', 
+          content: 'Set aside at least 20% of your income for savings.' 
+        }, { 
+          title: 'Market Trends', 
+          content: 'Stay updated with the latest market trends to make informed decisions.' 
+        }
       ];
 
       const financialInsightsSection = document.getElementById('financial-insights');
