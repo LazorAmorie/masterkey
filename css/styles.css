@@ -164,6 +164,7 @@ body {
 .balance-actions button:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
+    cursor: pointer;
 }
 
 .quick-access {

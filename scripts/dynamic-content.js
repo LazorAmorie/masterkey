@@ -24,11 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 { 
                     icon: 'fa-exchange-alt', 
                     text: 'Send Money', 
-                    link: 'index/send-money.html' 
+                    link: '/pages/send-money.html' 
                 }, { 
                     icon: 'fa-file-invoice-dollar', 
                     text: 'Pay Bills', 
-                    link: 'index/pay-bills.html' 
+                    link: '/pages/pay-bills.html' 
                 }, { 
                     icon: 'fa-qrcode ', 
                     text: 'Scan QR Code', 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, { 
                     icon: 'fa-history', 
                     text: 'Transaction History', 
-                    link: 'index/transaction-history.html' 
+                    //link: '/pages/transaction-history.html' 
                 }
             ];
 

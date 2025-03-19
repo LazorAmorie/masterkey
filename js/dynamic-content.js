@@ -1,8 +1,20 @@
 const billData = {
-    electricity: { label: "Electricity" },
-    water: { label: "Water" },
-    internet: { label: "Internet" },
-    rent: { label: "Rent" }
+    electricity: 
+    { 
+        label: "Electricity" 
+    },
+    water: 
+    { 
+        label: "Water" 
+    },
+    internet: 
+    { 
+        label: "Internet" 
+    },
+    rent: 
+    { 
+        label: "Rent" 
+    }
 };
 
 function showBillForm(billType) {
