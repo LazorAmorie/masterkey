@@ -1,8 +1,9 @@
-import {header, navLinks, balanceTile} from './index-data.js';
+import {header, navLinks, balanceTile, dashboard} from './index-data.js';
 
 let headerHTML = '';
 let navLinksHTML= '';
 let balanceTileHTML = '';
+let dashboardHTML = '';
 
 header.forEach((header) => {
     headerHTML += `
@@ -70,3 +71,13 @@ balanceTile.forEach((balanceTile) => {
 });
 document.querySelector('.tile.balance-tile').innerHTML = balanceTileHTML;
 
+dashboard.forEach((dashboard) => {
+    dashboardHTML +=`
+        <div class="tile">
+            <i class="${dashboard.icon}"></i>
+            <div class="tile-title">${dashboard.titleText}</div>
+            <div class="tile-description">${dashboard.description}</div>
+        </div>
+    `;
+});
+document.querySelector('.dashboard').innerHTML = dashboardHTML;

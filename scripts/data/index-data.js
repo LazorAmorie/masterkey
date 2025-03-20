@@ -45,3 +45,24 @@ export const balanceTile =[{
     wiDIcon: 'fa-solid fa-arrow-right-from-bracket',
     wiDSpan: 'Withdraw',
 }];
+
+export const dashboard = [{
+    titleText: "Wallet",
+    icon: "fa-solid fa-wallet",
+    description: "Manage your wallet"  
+},
+{
+    titleText: "Transfer",
+    icon: "fa-solid fa-exchange-alt",
+    description: "Transfer funds"
+},
+{
+    titleText: "Invest",
+    icon: "fa-solid fa-chart-line",
+    description: "Invest in stocks"
+},
+{
+    titleText: "Cards",
+    icon: "fa-solid fa-credit-card",
+    description: "Manage your cards"
+}];
