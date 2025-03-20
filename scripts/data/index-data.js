@@ -66,3 +66,27 @@ export const dashboard = [{
     icon: "fa-solid fa-credit-card",
     description: "Manage your cards"
 }];
+
+export const quickAccessTiles = [
+    { 
+        icon: "fa-solid fa-exchange-alt", 
+        text: "Send Money", 
+        url: "./pages/send-money.html" 
+    }, { 
+        icon: "fa-solid fa-file-invoice-dollar", 
+        text: "Pay Bills", 
+        url: "./pages/pay-bills.html" 
+    }, { 
+        icon: "fa-solid fa-qrcode", 
+        text: "Scan QR Code", 
+        action: "qr-code" 
+    }, { 
+        icon: "fa-solid fa-history", 
+        text: "Transaction History", 
+        url: "./pages/transaction-history.html" 
+    }, {
+        icon: "fa-solid fa-user-friends",
+        text: "Refer a Friend",
+        action: "refer-friend"
+    }
+];
