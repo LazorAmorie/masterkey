@@ -7,11 +7,10 @@ export const header = [{
     toggleBars: 'fa-solid fa-bars'
 }];
 
-export const navLinks = [
-    {
+export const navLinks = [{
         text: "Home",
         icon: "fa-solid fa-home",
-        url: "./index.html"  
+        url: "./new-home.html"  
     },
     {
         text: "Portfolio",
@@ -32,5 +31,17 @@ export const navLinks = [
         text: "Logout",
         icon: "fa-solid fa-sign-out",
         url: "./pages/logout.html"
-    }
-];
+    }];
+
+export const balanceTile =[{
+    h2Balancetitle: 'Total Balance',
+    ptotalBalance: '$5007868.00000',
+    toolTipadd: 'Add money to your account',
+    toolTipWiD: 'Withdraw funds to your bank account',
+    addLink: './pages/add-funds.html',
+    addIcon: 'fa-solid fa-arrow-right-from-bracket',
+    addSpan: 'Deposit',
+    wiDLink: './pages/withdraw-funds.html',
+    wiDIcon: 'fa-solid fa-arrow-right-from-bracket',
+    wiDSpan: 'Withdraw',
+}];

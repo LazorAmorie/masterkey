@@ -1,7 +1,8 @@
-import {header, navLinks} from './index-data.js';
+import {header, navLinks, balanceTile} from './index-data.js';
 
 let headerHTML = '';
 let navLinksHTML= '';
+let balanceTileHTML = '';
 
 header.forEach((header) => {
     headerHTML += `
@@ -10,7 +11,7 @@ header.forEach((header) => {
             <h1 class="welcome-message">${header.currentUser}</h1>
         </div>
         <div class="header-right">
-            <a href="${header.userSettingsLink}" class="icon-style_header profile-icon" title="Settings">
+            <a href="${header.userSettingsLink}" class="icon-style_header" title="Settings">
                 <i class="${header.userIcon}"></i>
             </a>
             <a href="#" class="icon-style_header notification-icon">
@@ -36,7 +37,10 @@ header.forEach((header) => {
         const currentUrl = new URL(window.location.href);
         const linkUrl = new URL(navLinks.url, window.location.origin);
     
-        const isActive = currentUrl.pathname === linkUrl.pathname;
+        //const isActive = currentUrl.pathname === linkUrl.pathname;
+
+        const isActive = currentUrl.pathname.startsWith(linkUrl.pathname) || 
+                 currentUrl.pathname === linkUrl.pathname;
         // tehn sytart loopiing throgh the thing wite the thin link nav chaniu cahni uko
         navLinksHTML += `
             <li class="${isActive ? 'active' : ''}">
@@ -48,6 +52,21 @@ header.forEach((header) => {
     });
 document.querySelector('.taskbar ul').innerHTML = navLinksHTML;
 
+balanceTile.forEach((balanceTile) => {
+    balanceTileHTML += `
+            <h2>${balanceTile.h2Balancetitle}</h2>
+                <p id="total-balance">$${parseFloat(balanceTile.ptotalBalance.replace(/[^0-9.-]+/g,"")).toFixed(2)}</p>
+                    <div class="balance-actions">
+                        <button class="action-button deposit" onclick="window.location.href='${balanceTile.addLink}'" data-tooltip="${balanceTile.toolTipadd}">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>${balanceTile.addSpan}</span>
+                        </button>
+                        <button class="action-button withdraw" onclick="window.location.href='${balanceTile.wiDLink}'" data-tooltip="${balanceTile.toolTipWiD}">
+                            <i class="fa-solid fa-minus"></i>
+                            <span>${balanceTile.wiDSpan}</span>
+                        </button>
+                    </div>
+    `;
+});
+document.querySelector('.tile.balance-tile').innerHTML = balanceTileHTML;
 
-
-    

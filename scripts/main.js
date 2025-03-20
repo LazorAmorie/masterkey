@@ -1,87 +1,97 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
-const app = {
-    init() {
-      this.cacheElements();
-      this.bindEvents();
- },
- cacheElements() {
-    this.openButton = document.getElementById('open-button');
-    this.closeButton = document.getElementById('close-button');
-    this.profileIcon = document.querySelector('.profile-icon');
-    this.notificationIcon = document.querySelector('.notification-icon');
-    this.taskbar = document.getElementById('taskbar');
-    this.taskbarToggle = document.getElementById('taskbar-toggle');
-    this.financialInsights = document.getElementsByClassName('insight-item');
-  },
-bindEvents() {
-    if (this.openButton) {
-      this.openButton.addEventListener('click', this.openSidebar.bind(this));
-    } else {
-      console.log('open-button not found');
-    }
+    const elements = {
+        openButton: document.getElementById('open-button'),
+        closeButton: document.getElementById('close-button'),
+        notificationIcon: document.querySelector('.notification-icon'),
+        taskbar: document.getElementById('taskbar'),
+        taskbarToggle: document.getElementById('taskbar-toggle'),
+        financialInsights: document.getElementsByClassName('insight-item'),
+        sidebar: document.getElementById('sidebar')
+    };
 
-    if (this.closeButton) {
-      this.closeButton.addEventListener('click', this.closeSidebar.bind(this));
-    } else {
-      console.log('close-button not found');
-    }
+    let financialInsightsLoaded = false;
 
-    if (this.profileIcon) {
-      this.profileIcon.addEventListener('click', this.toggleProfile.bind(this));
-    } else {
-      console.log('profile-icon not found');
-    }
+    const openSidebar = () => {
+        elements.sidebar.style.left = '0';
+        elements.openButton.style.display = 'none';
+        elements.closeButton.style.display = 'inline';
+    };
 
-    if (this.notificationIcon) {
-      this.notificationIcon.addEventListener('click', this.toggleNotificationDropdown.bind(this));
-    } else {
-      console.log('notification-icon not found');
-    }
+    const closeSidebar = () => {
+        elements.sidebar.style.left = '-200px';
+        elements.openButton.style.display = 'inline';
+        elements.closeButton.style.display = 'none';
+    };
+    const toggleNotificationDropdown = () => {
+        const dropdown = document.querySelector('.notification-dropdown');
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    };
 
-    if (this.taskbarToggle) {
-      this.taskbarToggle.addEventListener('click', this.toggleTaskbar.bind(this));
-    } else {
-      console.log('taskbar-toggle not found');
-    }
+    const toggleTaskbar = () => {
+        elements.taskbar.classList.toggle('open');
+    };
 
-    window.addEventListener('scroll', this.handleScroll.bind(this));
-  },
-  openSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.style.left = '0';
-    this.openButton.style.display = 'none';
-    this.closeButton.style.display = 'inline';
-  },
-  closeSidebar() {
-    const sidebar = document.getElementById('sidebar');
-    sidebar.style.left = '-200px';
-    this.openButton.style.display = 'inline';
-    this.closeButton.style.display = 'none';
-  },
-  toggleProfile() {
-    const profile = document.querySelector('.profile');
-    profile.style.display = (profile.style.display === 'block') ? 'none' : 'block';
-  },
-  toggleNotificationDropdown() {
-    const dropdown = document.querySelector('.notification-dropdown');
-    dropdown.style.display = (dropdown.style.display === 'block') ? 'none' : 'block';
-  },
-  toggleTaskbar() {
-    this.taskbar.classList.toggle('open');
-  },
-  handleScroll() {
-    const transactionsSection = document.querySelector('.transactions-overview');
-    const transactionsSectionBottom = transactionsSection.getBoundingClientRect().bottom;
-    if (transactionsSectionBottom < window.innerHeight && !this.financialInsightsLoaded) {
-      this.loadFinancialInsights();
-      this.financialInsightsLoaded = true;
-    }
-  }
+    const handleScroll = () => {
+        const transactionsSection = document.querySelector('.transactions-overview');
+        const transactionsSectionBottom = transactionsSection.getBoundingClientRect().bottom;
+        
+        if (transactionsSectionBottom < window.innerHeight && !financialInsightsLoaded) {
+            loadFinancialInsights();
+            financialInsightsLoaded = true;
+        }
+    };
 
-};
+    const loadFinancialInsights = () => {
+       
+        console.log('Loading financial insights...');
+    };
 
-app.init();
+    const setupEventListeners = () => {
+        
+        if (elements.openButton) {
+            elements.openButton.addEventListener('click', openSidebar);
+        } else {
+            console.log('open-button not found');
+        }
+
+        if (elements.closeButton) {
+            elements.closeButton.addEventListener('click', closeSidebar);
+        } else {
+            console.log('close-button not found');
+        }
+        if (elements.notificationIcon) {
+            elements.notificationIcon.addEventListener('click', toggleNotificationDropdown);
+        } else {
+            console.log('notification-icon not found');
+        }    
+        if (elements.taskbarToggle) {
+            elements.taskbarToggle.addEventListener('click', toggleTaskbar);
+        } else {
+            console.log('taskbar-toggle not found');
+        }
+
+        window.addEventListener('scroll', handleScroll);
+    };
+
+    setupEventListeners();
+
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('.action-button, .tile');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            
+            ripple.style.left = `${e.clientX - rect.left}px`;
+            ripple.style.top = `${e.clientY - rect.top}px`;
+            ripple.className = 'ripple';
+            
+            button.appendChild(ripple);
+            
+            setTimeout(() => ripple.remove(), 600);
+        });
+    });
 });
-  

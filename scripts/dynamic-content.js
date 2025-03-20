@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         renderBalance() {
             // Fetch and display the total balance
-            const balance = 5678.90; // Example balance
+            // Example balance
             this.totalBalance.textContent = `$${balance.toFixed(2)}`;
         },
         renderQuickAccessTiles() {
