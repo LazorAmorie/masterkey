@@ -1,10 +1,11 @@
-import {header, navLinks, balanceTile, dashboard, quickAccessTiles} from './index-data.js';
+import {header, navLinks, balanceTile, dashboard, quickAccessTiles, transactHist} from './index-data.js';
 
 let headerHTML = '';
 let navLinksHTML= '';
 let balanceTileHTML = '';
 let dashboardHTML = '';
 let quickAccessTilesHTML = '';
+let transactHistHTML = '';
 
 header.forEach((header) => {
     headerHTML += `
@@ -78,6 +79,8 @@ dashboard.forEach((dashboard) => {
 });
 document.querySelector('.dashboard').innerHTML = dashboardHTML;
 
+
+/*********  below ia the most complicted code ive written so far in this code base ,.... entr at your own risk .- 2KAY */
 quickAccessTiles.forEach((quickAccessTiles) => {
     if (quickAccessTiles.url) {
         quickAccessTilesHTML += `
@@ -146,3 +149,19 @@ function closeModal() {
         modal.remove();
     }
 }
+
+// the history transaction part thing...
+
+transactHist.forEach((transactHist) => {
+    transactHistHTML += `
+           
+                <li>
+                    <span>${transactHist.type}</span>
+                    <span>${transactHist.amount}</span>
+                    <span>${transactHist.date}</span>
+                </li>
+            
+            
+    `;
+});
+document.querySelector('#transactions-list').innerHTML = transactHistHTML;

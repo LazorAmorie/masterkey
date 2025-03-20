@@ -90,3 +90,19 @@ export const quickAccessTiles = [
         action: "refer-friend"
     }
 ];
+
+export const transactHist = [
+    { 
+        type: '🛒 Payment', 
+        amount: '$45.00', 
+        date: '12/07/2024' 
+    }, { 
+        type: '📥 Received', 
+        amount: '$120.00', 
+        date: '12/06/2024'
+    }, { 
+        type: '🏠 Rent', 
+        amount: '$1,000.00', 
+        date: '12/05/2024' 
+    }
+];
