@@ -10,7 +10,7 @@ export const header = [{
 export const navLinks = [{
         text: "Home",
         icon: "fa-solid fa-home",
-        url: "./index.html"  
+        url: "index.html"  
     },
     {
         text: "Portfolio",
