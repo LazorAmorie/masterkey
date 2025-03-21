@@ -10,7 +10,7 @@ export const header = [{
 export const navLinks = [{
         text: "Home",
         icon: "fa-solid fa-home",
-        url: "./new-home.html"  
+        url: "./index.html"  
     },
     {
         text: "Portfolio",
@@ -106,3 +106,16 @@ export const transactHist = [
         date: '12/05/2024' 
     }
 ];
+
+export const insights = [
+    { 
+      title: 'Investment Tips', 
+      content: 'Diversify your portfolio to minimize risk.' 
+    }, { 
+      title: 'Saving Strategies', 
+      content: 'Set aside at least 20% of your income for savings.' 
+    }, { 
+      title: 'Market Trends', 
+      content: 'Stay updated with the latest market trends to make informed decisions.' 
+    }
+  ];

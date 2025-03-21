@@ -39,7 +39,7 @@
 /**         END OF NOTES (MIN DOCUMENTATION KINDA )
 ***/
 
-import {header, navLinks, balanceTile, dashboard, quickAccessTiles, transactHist} from './index-data.js';
+import {header, navLinks, balanceTile, dashboard, quickAccessTiles, transactHist, insights} from './index-data.js';
 
     // setting up the variables for the whole page gradually 
 
@@ -49,6 +49,7 @@ let balanceTileHTML = '';
 let dashboardHTML = '';
 let quickAccessTilesHTML = '';
 let transactHistHTML = '';
+let insightsHTML = '';
 
 
     // start workimg out the set globalvariables on let block
@@ -220,3 +221,13 @@ transactHist.forEach((transactHist) => {
     `;
 });
 document.querySelector('#transactions-list').innerHTML = transactHistHTML;
+
+insights.forEach((insights) => {
+    insightsHTML += `
+        <div class="insight-item">
+                <h3>${insights.title}</h3>
+                <p>${insights.content}</p>
+        </div>   
+    `;
+});
+document.querySelector('#financial-insights').innerHTML = insightsHTML;
