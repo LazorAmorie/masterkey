@@ -22,17 +22,37 @@ document.addEventListener('DOMContentLoaded', function() {
             'Rent', 
             'Groceries', 
             'Utilities', 
-            'Entertainment', 'Others'],
-        datasets: [{
-            data: [500, 200, 150, 100, 50], // Example data, replace with actual data
-            backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF']
+            'Entertainment', 
+            'Others'
+        ],
+        datasets: [
+            {
+            data: [
+                500, 
+                200, 
+                150, 
+                100, 
+                50
+            ], 
+            // Example data, replace with actual data
+            backgroundColor: [
+                '#FF6384', 
+                '#36A2EB', 
+                '#FFCE56', 
+                '#4BC0C0', 
+                '#9966FF'
+            ]
         }]
     };
 
     // Generate transaction confirmation message
     const confirmationMessage = document.createElement('div');
     confirmationMessage.classList.add('confirmation-message');
-    confirmationMessage.innerHTML = `<p>Your recent transaction was successful!</p>`;
+    confirmationMessage.innerHTML = `
+        <p>
+            Your recent transaction was successful!
+        </p>
+        `;
     transactionConfirmation.appendChild(confirmationMessage);
 
     // Make the comfirmation message disappear after 5 seconds 

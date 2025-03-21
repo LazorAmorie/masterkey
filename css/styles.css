@@ -8,6 +8,8 @@
     --secondary-color: #A2A3CB;
     --accent-color: #C1CAD6;
     --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --head-color2: #e74c3c;
+    --head-color1: #2ecc71;
 }
 
 body {
@@ -18,14 +20,16 @@ body {
     background-color: var(--primary-color);
 }
 
+.main-content {
+    padding: 0 20px;
+}
+
 .dashboard {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
-    margin-top: 80px;
+    padding: 20px;
+    margin-bottom: 30px;
 }
 
 .header {
@@ -38,8 +42,11 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    z-index: 100;
+   /* z-index: 100;**/
+    width: 100%;
+    height: 60px;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 .header-left, .header-center, .header-right {
     display: flex;
@@ -54,27 +61,20 @@ body {
     margin: 0;
     color: var(--main-color);
 }
-.notification-icon, .profile-icon {
+.icon-style_header {
     font-size: 1.5rem;
     cursor: pointer;
     transition: color 0.3s;
-    color: var(--main-color);   margin-left: 20px;
-}
-.notification-icon {
+    color: var(--main-color);   
     margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .header-right {
     display: flex;
     align-items: center;
     gap: 20px;
-}
-
-.icon-style_header {
-    color: var(--main-color);
-    text-decoration: none;
-    font-size: 1.2rem;
-    transition: color 0.3s ease;
 }
 
 .icon-style_header:hover {
@@ -120,50 +120,57 @@ body {
     color: var(--secondary-color);
 }
 
-.balance-widget {
-    background: var(--accent-color);
+.balance-tile {
+    background: var(--main-color);
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
+    margin-bottom: 20px;
     box-shadow: var(--box-shadow);
+    color: var(--accent-color);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.balance-widget:hover {
+.balance-tile:hover {
     transform: translateY(-5px);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.balance-widget h2 {
-    margin: 0;
+.balance-tile h1 {
+    margin: 0 0 10px 0;
     font-size: 1.5rem;
-    color: var(--main-color);
+    color: var(--accent-color);
 }
 
-.balance-widget p {
+.balance-tile p#total-balance {
     font-size: 2.5rem;
-    margin: 10px 0;
+    margin: 15px 0;
+    color: var (--accent-color);
+}
+
+.balance-actions {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .balance-actions button {
     margin: 5px;
-    padding: 10px 20px;
+    padding: 10px;
     font-size: 1rem;
     border: none;
+    cursor: pointer;
     border-radius: 5px;
     background: var(--main-color);
     color: var(--accent-color);
-    cursor: pointer;
     transition: background 0.3s ease, transform 0.3s ease;
-}
-
-.balance-actions button i {
-    color: #000;
 }
 
 .balance-actions button:hover {
     background: var(--secondary-color);
     transform: translateY(-2px);
+    cursor: pointer;
 }
 
 .quick-access {
@@ -186,6 +193,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    cursor: pointer;
 }
 
 .tile:hover {
@@ -224,7 +232,7 @@ body {
 
 .tile-description {
     font-size: 1rem;
-    color: var(--accent-color);
+    color: var (--accent-color);
 }
 
 .balance-tile {
@@ -252,25 +260,13 @@ body {
     width: 100%;
 }
 
-.balance-tile button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 8px 16px;
-    min-width: 100px;
-    flex: 1;
-    max-width: 150px;
-    border: none;
-    border-radius: 5px;
-    background: var(--accent-color);
+.balance-actions button:hover {
+    background: var(--secondary-color);
     color: var(--main-color);
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
 }
 
-.balance-tile button[data-tooltip]::before {
+.balance-actions button[data-tooltip]::before {
     content: attr(data-tooltip);
     position: absolute;
     bottom: 100%;
@@ -289,7 +285,7 @@ body {
     margin-bottom: 8px;
 }
 
-.balance-tile button[data-tooltip]::after {
+.balance-actions button[data-tooltip]::after {
     content: '';
     position: absolute;
     bottom: 100%;
@@ -303,35 +299,52 @@ body {
     margin-bottom: 2px;
 }
 
-.balance-tile button[data-tooltip]:hover::before,
-.balance-tile button[data-tooltip]:hover::after {
+.balance-actions button[data-tooltip]:hover::before,
+.balance-actions button[data-tooltip]:hover::after {
     opacity: 1;
     visibility: visible;
 }
 
 @media (max-width: 768px) {
-    .balance-tile button[data-tooltip]::before {
+    .balance-actions button[data-tooltip]::before {
         font-size: 0.75rem;
         padding: 6px 10px;
     }
 }
 
-.balance-tile button i {
+.balance-actions button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    min-width: 100px;
+    flex: 1;
+    max-width: 150px;
+    border: none;
+    border-radius: 5px;
+    background: var(--accent-color);
+    color: var(--main-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.balance-actions button i {
     display: none;
     font-size: 1.2rem;
     color: var(--main-color);
 }
 
-.balance-tile button span {
+.balance-actions button span {
     font-size: 0.9rem;
     font-weight: 500;
 }
 
-.balance-tile button:hover {
+.balance-actions button:hover {
     background: var(--secondary-color);
 }
 
-.balance-tile button:hover i {
+.balance-actions button:hover i {
     color: var(--accent-color);
 }
 
@@ -343,7 +356,7 @@ body {
         padding: 0 10px;
     }
 
-    .balance-tile button {
+    .balance-actions button {
         width: 100%;
         min-width: 0;
         padding: 12px;
@@ -352,7 +365,7 @@ body {
         max-width: 50px;
     }
 
-    .balance-tile button i {
+    .balance-actions button i {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -362,7 +375,7 @@ body {
         font-size: 1.4rem;
     }
 
-    .balance-tile button span {
+    .balance-actions button span {
         display: none;
     }
 }
@@ -456,17 +469,16 @@ body {
     margin-bottom: 30px;
 }
 
-.balance-widget {
+.balance-tile {
     margin: 0;
     max-width: none;
 }
 
 .financial-access {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 20px;
+    width: 100%;
     padding: 20px;
-    margin-bottom: 30px;
+    margin-top: 60px;
+    top: 60;
 }
 
 @media (min-width: 768px) {
@@ -482,7 +494,7 @@ body {
         gap: 20px;
     }
 
-    .balance-widget {
+    .balance-tile {
         flex: 1 1 40%;
     }
 
@@ -515,50 +527,25 @@ body {
     .financial-insights {
         grid-template-columns: 1fr;
     }
+
+    .dashboard {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .balance-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
     .financial-access {
         grid-template-columns: 1fr;
     }
-}
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    text-align: center;
-    border-radius: 8px;
-}
-
-.close-button {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close-button:hover,
-.close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
 }
 
 .footer {
@@ -588,38 +575,52 @@ body {
 
 .taskbar {
     position: fixed;
-    top: 0;
-    left: -250px;
-    width: 250px;
-    height: 100%;
+    top: 60px; 
+    right: -250px;
+    width: 150px;
+    height: calc(100% - 60px); 
     background-color: var(--main-color);
-    transition: left 0.3s;
+    transition: right 0.3s;
     box-shadow: var(--box-shadow);
+    z-index: 1001;
+    overflow-y: auto;
 }
+
+.taskbar.open {
+    right: 0; 
+}
+
+.taskbar ul {
+    padding-top: 20px;
+}
+
 .taskbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
+
 .taskbar ul li {
     padding: 15px;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 1px solid #007BFF;
 }
+
 .taskbar ul li a {
     color: var(--accent-color);
     text-decoration: none;
     display: flex;
     align-items: center;
 }
+
 .taskbar ul li a i {
     margin-right: 10px;
+    color: #162c44;
 }
-.taskbar ul li a:hover {
+
+.taskbar ul li:hover {
     background-color: var(--secondary-color);
 }
-.taskbar.open {
-    left: 0;
-}
+
 .taskbar-toggle {
     font-size: 24px;
     cursor: pointer;
@@ -633,4 +634,195 @@ body {
 
 .dynamic-item {
     display: none;
+}
+
+/*****   the active url styling on the togle nav bar .. still experimanetal   *****/
+
+.taskbar li.active {
+    background: var(--secondary-color);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.taskbar li.active i {
+    color: #007BFF;
+}
+
+/* Action Buttons Styling */
+.action-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 120px;
+}
+
+.action-button.deposit:hover {
+    background: var(--head-color1);
+    color: white;
+}
+
+.action-button.withdraw:hover {
+    background: var(--head-color2);
+    color: inherit;
+}
+/*
+.action-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+*/
+.action-button:active {
+    transform: translateY(0);
+}
+
+/* Improved tooltip styling */
+.action-button[data-tooltip]::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: #333;
+    color: white;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.action-button[data-tooltip]::after {
+    content: '';
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: #333;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.action-button[data-tooltip]:hover::before,
+.action-button[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: 125%;
+}
+
+/* Dashboard tiles improvements new code and all new chnges after reucong repeatarive code coused redundacy i hate ai generated code mehn*/
+.dashboard .tile {
+    position: relative;
+    background: linear-gradient(145deg, var(--main-color), #2980b9);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 24px;
+    transition: all 0.3s ease;
+}
+
+.dashboard .tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.dashboard .tile i {
+    font-size: 2.5rem;
+    margin-bottom: 16px;
+    color: var(--secondary-color);
+    transition: transform 0.3s ease;
+}
+
+.dashboard .tile:hover i {
+    transform: scale(1.1);
+}
+
+/* Ripple effect */
+.action-button, .tile {
+    position: relative;
+    overflow: hidden;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Responsive whatever*/
+@media (max-width: 768px) {
+    .balance-actions {
+        flex-direction: row;
+        gap: 12px;
+        padding: 0 16px;
+    }
+
+    .action-button {
+        padding: 10px 16px;
+        min-width: auto;
+        flex: 1;
+    }
+
+    .action-button span {
+        display: none;
+    }
+
+    .action-button i {
+        font-size: 1.2rem;
+        margin: 0;
+    }
+}
+
+/******* qr code type shit *****/
+
+
+#close-modal-button { 
+    margin-top: 10px;
+}
+
+
+#qr-code-modal {
+    border-radius: 10px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--secondary-color);
+    padding: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+#qr-code-modal button {
+    background: var(--main-color);
+    color: var(--secondary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#qr-code-modal button:hover {
+    background: var(--head-color2);
+    color: var(--primary-color);
 }
