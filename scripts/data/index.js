@@ -36,6 +36,7 @@
 /** IF ANYTHING THEN ITS JUST SOEM CONDITIONING WHICH MAY VARY ACORDING TO USE CASE ...THIS HELPS TO UNDESTAND THE CODE BETTER FOR EAST EDITTING AND 
 /** MODIFFICATION OF THE CODEBASE
 /**
+/**         END OF NOTES (MIN DOCUMENTATION KINDA )
 ***/
 
 import {header, navLinks, balanceTile, dashboard, quickAccessTiles, transactHist} from './index-data.js';
