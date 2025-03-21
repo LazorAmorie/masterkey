@@ -1,4 +1,44 @@
+/*** NOTES ON THE CODE IN THE FILE
+/**
+/** EVRY BLOCK ON THE HTML PAGE (INDEX.HTML) AS REFFERENCED FROM THIS FIEL (INDEX.JS STARTS WITH:
+/**
+/**  import {theWantedDataBlock} from './index-data.js; ( the page that holds the data structure for every repeatatice line of data)
+/**
+/** THEN WE SET THE VARIABLE TO REFERNCE THE QUERIES FOR EVERY PARTICULAR BLOCK FOR THE INDEX.HTML:
+/**
+/**  let let theNeededBlockHTML = '';
+/**
+/** THEN WE EXECUTE A forEach loop WITH REFFERECNE TO OUR TARGETED function IN AN ARROW function ( I DONT KNOW IF IT MAKES SENSE BUT IT WORKS ):
+/**
+/**  theWantedDataBlock.forEach((theWantedDataBlock) => {
+/**   theNeededBlockHTML += `
+/**
+/**  here we write the tartgeted html block with reference to our variable set on let and the one we are looping through together with the 
+/**  data from our data file inside the `( i have forgotten the name )` 
+/**
+/**          e.g.
+/**             
+/**          <li class="${isActive ? 'active' : ''}">
+/**                <a href="${theWantedDataBlock.url}" >
+/**                    <i class="${theWantedDataBlock.icon}"></i>
+/**                    ${theWantedDataBlock.text}
+/**                </a>
+/**          </li>
+/**
+/**   `;});
+/**
+/** THEN AFTER EXECUTING THAT WE SELECT THE QUERY FOR THE HTML WITH REFERNCE TO THE TARGETED PARENT SELECTOR IN THE HTML PAGE ( index.html ):
+/**
+/**  document.querySelector('.targetedSelector').innerHTML = theNeededBlockHTML;
+/**
+/** IF ANYTHING THEN ITS JUST SOEM CONDITIONING WHICH MAY VARY ACORDING TO USE CASE ...THIS HELPS TO UNDESTAND THE CODE BETTER FOR EAST EDITTING AND 
+/** MODIFFICATION OF THE CODEBASE
+/**
+***/
+
 import {header, navLinks, balanceTile, dashboard, quickAccessTiles, transactHist} from './index-data.js';
+
+    // setting up the variables for the whole page gradually 
 
 let headerHTML = '';
 let navLinksHTML= '';
@@ -6,6 +46,10 @@ let balanceTileHTML = '';
 let dashboardHTML = '';
 let quickAccessTilesHTML = '';
 let transactHistHTML = '';
+
+
+    // start workimg out the set globalvariables on let block
+    // we start withe haedr ...
 
 header.forEach((header) => {
     headerHTML += `
@@ -34,11 +78,15 @@ header.forEach((header) => {
         
     document.querySelector('.header').innerHTML = headerHTML;
 
+    // the sidebar nav  link markup code and logic 
+
     navLinks.forEach((navLinks) => {
         // the logic to determine if the link is active / i hate inside logic aaaaaaaaaaah
         const currentUrl = new URL(window.location.href);
         const linkUrl = new URL(navLinks.url, window.location.origin);
         const isActive = currentUrl.pathname.startsWith(linkUrl.pathname) || currentUrl.pathname === linkUrl.pathname;
+
+        //the genarate the nav link with athe conditioning logic applied....
 
         navLinksHTML += `
             <li class="${isActive ? 'active' : ''}">
@@ -49,6 +97,8 @@ header.forEach((header) => {
             </li>`;
     });
 document.querySelector('.taskbar ul').innerHTML = navLinksHTML;
+
+/// the bslance tile well marked up ad ready ...
 
 balanceTile.forEach((balanceTile) => {
     balanceTileHTML += `
@@ -67,6 +117,8 @@ balanceTile.forEach((balanceTile) => {
     `;
 });
 document.querySelector('.tile.balance-tile').innerHTML = balanceTileHTML;
+
+// dashboard genarating cod e looped through gracefully .....
 
 dashboard.forEach((dashboard) => {
     dashboardHTML +=`
