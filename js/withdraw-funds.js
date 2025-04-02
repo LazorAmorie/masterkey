@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    methodOptions.forEach(option => option.style.display = 'none'); // Hides it initially 
     const methods = document.querySelectorAll('.method');
     const methodOptions = document.querySelectorAll('.method-options');
 
