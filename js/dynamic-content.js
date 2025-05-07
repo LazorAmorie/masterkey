@@ -35,6 +35,22 @@ function payBill(billType) {
     showNotification(`Paying ${billData[billType].label} bill`);
 }
 
+function payBill(billType) {
+    const amountInput = document.getElementById(`${billType}-amount`);
+    const amount = parseFloat(amountInput.value);
+    if (!validateAmount(amount)) return;
+    
+    showNotification(`Processing payment for ${billData[billType].label} bill...`);
+    setTimeout(() => {
+        const success = Math.random() > 0.2; // 80% chance of success
+        if (success) {
+            showNotification(`Payment for ${billData[billType].label} bill of $${amount} was successful.`);
+        } else {
+            showNotification(`Payment for ${billData[billType].label} bill of $${amount} failed. Please try again.`);
+        }
+    }, 2000);
+}
+
 function showNotification(message) {
     const notification = document.getElementById('notification');
     notification.innerText = message;
