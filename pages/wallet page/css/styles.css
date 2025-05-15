@@ -1,0 +1,148 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --main-color: #1D6282;
+    --primary-color: rgb(231, 231, 231);
+    --secondary-color: #A2A3CB;
+    --accent-color: #C1CAD6;
+    --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --head-color2: #e74c3c;
+    --head-color1: #2ecc71;
+}
+
+body {
+    color: var(--main-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--primary-color);
+}
+
+.main-content {
+    padding: 0 20px;
+}
+
+.header {
+    background: var(--main-color);
+    color: #fff;
+    padding: 24px 0 16px 0;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    letter-spacing: 2px;
+}
+
+.wallet-content {
+    max-width: 420px;
+    margin: 40px auto 0 auto;
+    padding: 0 16px;
+}
+
+.wallet-balance, .currency-converter {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: var(--box-shadow);
+    padding: 28px 24px 20px 24px;
+    margin-bottom: 32px;
+}
+
+.wallet-balance h2, .currency-converter h2 {
+    color: var(--main-color);
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+#wallet-balance, #converted-amount {
+    font-weight: bold;
+    color: var(--head-color1);
+}
+
+.wallet-actions {
+    margin-top: 18px;
+    display: flex;
+    gap: 10px;
+}
+
+.wallet-actions input[type="number"] {
+    flex: 1;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.wallet-actions input[type="number"]:focus {
+    border: 1.5px solid var(--main-color);
+}
+
+.wallet-actions button {
+    background: var(--main-color);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.wallet-actions button:hover {
+    background: var(--head-color2);
+}
+
+.currency-converter input[type="number"], .currency-converter select {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    border: 1px solid var(--accent-color);
+    font-size: 1rem;
+    outline: none;
+    transition: border 0.2s;
+}
+
+.currency-converter input[type="number"]:focus, .currency-converter select:focus {
+    border: 1.5px solid var(--main-color);
+}
+
+.currency-converter button {
+    width: 100%;
+    background: var(--head-color1);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 0;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: background 0.2s;
+}
+
+.currency-converter button:hover {
+    background: var(--main-color);
+}
+
+.footer {
+    background: var(--main-color);
+    color: #fff;
+    text-align: center;
+    padding: 16px 0;
+    margin-top: 40px;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    box-shadow: var(--box-shadow);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .wallet-content {
+        max-width: 98vw;
+        padding: 0 4vw;
+    }
+    .wallet-balance, .currency-converter {
+        padding: 18px 8px 14px 8px;
+    }
+}
