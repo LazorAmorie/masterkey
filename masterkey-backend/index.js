@@ -17,5 +17,5 @@ mongoose.connect("mongodb+srv://georgehssein:12/jan/5002@masterkeydb.ghpt6cm.mon
   console.log("Connected to MongoDB Atlas");
 })
 .catch((error) => {
-  console.log(error, "connection failed");
+  console.log("connection failed");
 });
