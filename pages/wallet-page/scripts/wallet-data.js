@@ -11,4 +11,4 @@ export const walletBalance = [
         addFunds: 'Add Funds',
         withdrawFunds: 'Withdraw Funds'
     }
-]
+];
