@@ -126,11 +126,13 @@ document.querySelector('.tile.balance-tile').innerHTML = balanceTileHTML;
 
 dashboard.forEach((dashboard) => {
     dashboardHTML +=`
+        <a href="${dashboard.tileLink}">
         <div class="tile">
             <i class="${dashboard.icon}"></i>
             <div class="tile-title">${dashboard.titleText}</div>
             <div class="tile-description">${dashboard.description}</div>
         </div>
+        </a>
     `;
 });
 document.querySelector('.dashboard').innerHTML = dashboardHTML;

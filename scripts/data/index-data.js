@@ -47,11 +47,13 @@ export const balanceTile =[{
 }];
 
 export const dashboard = [{
+    tileLink: "./pages/wallet-page/wallet.html",
     titleText: "Wallet",
     icon: "fa-solid fa-wallet",
     description: "Manage your wallet"  
 },
 {
+    tileLink: "",
     titleText: "Transfer",
     icon: "fa-solid fa-exchange-alt",
     description: "Transfer funds"
@@ -62,6 +64,7 @@ export const dashboard = [{
     description: "Invest in stocks"
 },
 {
+    tileLink: "",
     titleText: "Cards",
     icon: "fa-solid fa-credit-card",
     description: "Manage your cards"

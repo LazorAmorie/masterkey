@@ -24,6 +24,10 @@ body {
     padding: 0 20px;
 }
 
+a {
+    text-decoration: none;
+}
+
 .dashboard {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));

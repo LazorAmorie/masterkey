@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wallet</title>
-    <link rel="stylesheet" href="../wallet page/css/styles.css">
+    <link rel="stylesheet" href="../wallet-page/css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
 </head>
 <body>
@@ -17,7 +17,7 @@
             <h2>Wallet Balance</h2>
             <p>Current Balance: <span id="wallet-balance">$0.00</span></p>
             <div class="wallet-actions">
-                <input type="number" id="amount" placeholder="Enter amount" />
+                <input type="text" id="amount" placeholder="Enter amount" />
                 <button onclick="addFunds()">Add Funds</button>
                 <button onclick="withdrawFunds()">Withdraw Funds</button>
             </div>
@@ -26,7 +26,7 @@
         <!-- Currency Converter Section -->
         <div class="currency-converter">
             <h2>Currency Converter</h2>
-            <input type="number" id="convert-amount" placeholder="Enter amount in USD" />
+            <input type="text" id="convert-amount" placeholder="Enter amount in USD" />
             <select id="currency">
                 <option value="0.85">EUR (Euro)</option>
                 <option value="74.50">INR (Indian Rupee)</option>
@@ -39,6 +39,6 @@
     <footer class="footer">
         <p>&copy; 2024 FinTech App. All rights reserved.</p>
     </footer>
-    <script src="../wallet page/scripts/wallet.js"></script>
+    <script src="../wallet-page/scripts/wallet.js"></script>
 </body>
 </html>
