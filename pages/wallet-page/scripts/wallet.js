@@ -1,40 +1,30 @@
-let walletBalance = 0;
+import { walletHeader, walletBalance } from "./wallet-data.js";
 
-// Add funds to the wallet
-function addFunds() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    if (!isNaN(amount) && amount > 0) {
-        walletBalance += amount;
-        updateWalletBalance();
-    } else {
-        alert('Please enter a valid amount.');
-    }
-}
+let walletHeaderHTML = '';
+let walletBalanceHTML = '';
 
-// Withdraw funds from the wallet
-function withdrawFunds() {
-    const amount = parseFloat(document.getElementById('amount').value);
-    if (!isNaN(amount) && amount > 0 && amount <= walletBalance) {
-        walletBalance -= amount;
-        updateWalletBalance();
-    } else {
-        alert('Invalid amount or insufficient balance.');
-    }
-}
+walletHeader.forEach((walletHeader) => {
+    walletHeaderHTML += `
+      <h1>${walletHeader.headerH1}</h1>
+    `;
+})
 
-// Update the wallet balance display
-function updateWalletBalance() {
-    document.getElementById('wallet-balance').textContent = `$${walletBalance.toFixed(2)}`;
-}
+document.querySelector('.header').innerHTML = walletHeaderHTML;
 
-// Convert currency
-function convertCurrency() {
-    const amount = parseFloat(document.getElementById('convert-amount').value);
-    const rate = parseFloat(document.getElementById('currency').value);
-    if (!isNaN(amount) && amount > 0) {
-        const convertedAmount = amount * rate;
-        document.getElementById('converted-amount').textContent = convertedAmount.toFixed(2);
-    } else {
-        alert('Please enter a valid amount.');
-    }
-}
+walletBalance.forEach((walletBalance) => {
+    walletBalanceHTML += `
+            <h2>${walletBalance.balanceH2}</h2>
+            <p>${walletBalance.balanceP}
+             <span id="wallet-balance">$0.00</span></p>
+            <div class="wallet-actions">
+                <input type="text" id="amount" placeholder="Enter amount" />
+            </div>
+            <div class="wallet-actions">
+                <br>
+                <button onclick="addFunds()">${walletBalance.addFunds}</button>
+                <button onclick="withdrawFunds()">${walletBalance.withdrawFunds}</button>
+            </div>
+    `;
+})
+
+document.querySelector('.wallet-balance').innerHTML = walletBalanceHTML;
