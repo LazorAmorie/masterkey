@@ -1,5 +1,5 @@
 const express = require('express');
-const mongoose = required("mongoose");
+const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 
