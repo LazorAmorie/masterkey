@@ -1,5 +1,5 @@
 const express = require('express');
-const mangoose = required("mangoose");
+const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 
@@ -17,5 +17,5 @@ mongoose.connect("mongodb+srv://georgehssein:12/jan/5002@masterkeydb.ghpt6cm.mon
   console.log("Connected to MongoDB Atlas");
 })
 .catch((error) => {
-  console.log("connection failed");
+  console.log("connection fail");
 });
