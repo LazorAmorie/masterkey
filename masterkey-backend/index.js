@@ -12,7 +12,7 @@ app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-mongoose.connect("mongodb+srv://georgehssein:12/jan/5002@masterkeydb.ghpt6cm.mongodb.net/Masterkey-API?retryWrites=true&w=majority&appName=MasterKeyDB")
+mongoose.connect("mongodb+srv://georgehssein:12%2Fjan%2F5002@masterkeydb.ghpt6cm.mongodb.net/Masterkey-API?retryWrites=true&w=majority&appName=MasterKeyDB")
 .then (()  => {
   console.log("Connected to MongoDB Atlas");
 })
