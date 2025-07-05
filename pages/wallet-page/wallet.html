@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet</title>
+    <link rel="stylesheet" href="../wallet-page/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+      
+    </header>
+
+    <main class="wallet-content">
+        <!-- Wallet Balance Section -->
+        <div class="wallet-balance">
+      
+        </div>
+        
+
+        <!-- Currency Converter Section -->
+        <div class="currency-converter">
+            <h2>Currency Converter</h2>
+            <input type="text" id="convert-amount" placeholder="Enter amount in USD" />
+            <select id="currency">
+                <option value="0.85">EUR (Euro)</option>
+                <option value="74.50">INR (Indian Rupee)</option>
+                <option value="110.00">JPY (Japanese Yen)</option>
+            </select>
+            <button onclick="convertCurrency()">Convert</button>
+            <p>Converted Amount: <span id="converted-amount">0.00</span></p>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>&copy; 2024 FinTech App. All rights reserved.</p>
+    </footer>
+    <script type="module" src="./scripts/wallet.js"></script>
+    <script src="./scripts/wallet-script.js"></script>
+</body>
+</html>
