@@ -8,13 +8,16 @@ app.get('/', (req, res) => {
   res.send('Welcome to the MasterKey Backend API Updated For u!');
 });
 
+app.post('/api/products', (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
+})
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-require('dotenv').config();
-mongoose.connect(process.env.MONGO_URI)
-// ...rest of you
+mongoose.connect("mongodb+srv://georgehussein:ed4oklVMszouyaWI@backenddb.5roxosq.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB")
 .then (()  => {
   console.log("Connected to MongoDB Atlas");
 })
