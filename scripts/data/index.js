@@ -107,7 +107,7 @@ document.querySelector('.taskbar ul').innerHTML = navLinksHTML;
 balanceTile.forEach((balanceTile) => {
     balanceTileHTML += `
             <h1>${balanceTile.h2Balancetitle}</h1>
-                <p id="total-balance">$${parseFloat(balanceTile.ptotalBalance.replace(/[^0-9.-]+/g,"")).toFixed(2)}</p>
+                <p id="total-balance">$${Number(balanceTile.balance).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
                     <div class="balance-actions">
                         <button class="action-button deposit" onclick="window.location.href='${balanceTile.addLink}'" data-tooltip="${balanceTile.toolTipadd}">
                             <i class="fa-solid fa-plus"></i>

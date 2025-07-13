@@ -35,7 +35,7 @@ export const navLinks = [{
 
 export const balanceTile =[{
     h2Balancetitle: 'Total Balance',
-    ptotalBalance: '$5007868.00000',
+    ptotalBalance: 90.00,
     toolTipadd: 'Add money to your account',
     toolTipWiD: 'Withdraw funds to your bank account',
     addLink: './pages/add-funds.html',
