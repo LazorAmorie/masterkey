@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
 const authRoutes = require('./routes/auth');
 app.use('/api/auth', authRoutes)
 
+const path = require('path');
+
+app.use(express.static(path.join(__dirname, 'pages')));
+
 
 app.post('/api/products', (req, res) => {
   console.log(req.body);
