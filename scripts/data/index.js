@@ -70,8 +70,7 @@ header.forEach((header) => {
             </a>
             <div class="taskbar-toggle" id="taskbar-toggle">
                 <i class="${header.toggleBars}"></i>
-                <div class="notification-dropdown">
-                    <ul>
+                <div class="notification-dropdown"> <ul>
                         <li><h1><a href="${header.notificationLink}">Notifications</h1></a></li>
                     </ul>
                 </div>

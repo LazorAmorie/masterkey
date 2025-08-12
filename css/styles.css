@@ -225,7 +225,6 @@ a {
 .tile i {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: var(--accent-color);
 }
 
 .tile-title {
