@@ -106,7 +106,7 @@ document.querySelector('.taskbar ul').innerHTML = navLinksHTML;
 balanceTile.forEach((balanceTile) => {
     balanceTileHTML += `
             <h1>${balanceTile.h2Balancetitle}</h1>
-                <p id="total-balance">$${parseFloat(balanceTile.ptotalBalance.replace(/[^0-9.-]+/g,"")).toFixed(2)}</p>
+                <p id="total-balance">$${Number(balanceTile.balance).toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2})}</p>
                     <div class="balance-actions">
                         <button class="action-button deposit" onclick="window.location.href='${balanceTile.addLink}'" data-tooltip="${balanceTile.toolTipadd}">
                             <i class="fa-solid fa-plus"></i>
@@ -125,11 +125,13 @@ document.querySelector('.tile.balance-tile').innerHTML = balanceTileHTML;
 
 dashboard.forEach((dashboard) => {
     dashboardHTML +=`
+        <a href="${dashboard.tileLink}">
         <div class="tile">
             <i class="${dashboard.icon}"></i>
             <div class="tile-title">${dashboard.titleText}</div>
             <div class="tile-description">${dashboard.description}</div>
         </div>
+        </a>
     `;
 });
 document.querySelector('.dashboard').innerHTML = dashboardHTML;
